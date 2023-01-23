@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
+<%- include('../partials/header') %>
     <nav>
+      <a href="/projects/">Projects</a>
+      <!-- <a href="/flights/new">New Flight</a> -->
       <% if (user) { %>
         <a href="/logout">LOG OUT</a>
       <% } else { %>
@@ -15,5 +11,8 @@
 
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
-  </body>
-</html>
+    <br>
+   
+    
+
+<%- include('../partials/footer') %>

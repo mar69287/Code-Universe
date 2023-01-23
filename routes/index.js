@@ -1,11 +1,10 @@
 var express = require('express');
 var router = express.Router();
 const passport = require('passport');
+const newsCtrl = require("../controllers/news")
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+router.get('/', newsCtrl.index);
 
 router.get('/auth/google', passport.authenticate(
   // Which passport strategy is being used?
@@ -15,15 +14,6 @@ router.get('/auth/google', passport.authenticate(
     scope: ['profile', 'email'],
     // Optionally force pick account every time
     prompt: "select_account"
-  }
-));
-
-// Google OAuth callback route
-router.get('/oauth2callback', passport.authenticate(
-  'google',
-  {
-    successRedirect: '/',
-    failureRedirect: '/'
   }
 ));
 

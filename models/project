@@ -1,0 +1,20 @@
+const mongoose = require('mongoose');
+// optional shortcut to the mongoose.Schema class
+const Schema = mongoose.Schema;
+
+const projectSchema = new Schema({
+    content: {
+        type: String,
+    },
+    members: {
+        type: Number,
+        min: [1, "too low"],
+        max: [20, "too high"]
+    },
+    date: Date,
+}, {
+    timestamps: true
+});
+
+
+module.exports = mongoose.model("Project", projectSchema)
