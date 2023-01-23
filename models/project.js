@@ -5,13 +5,21 @@ const Schema = mongoose.Schema;
 const projectSchema = new Schema({
     content: {
         type: String,
+        required: true
     },
     members: {
         type: Number,
         min: [1, "too low"],
         max: [20, "too high"]
     },
-    date: Date,
+    // created: {
+    //     type: Date,
+    //     default: Date.now
+    // },
+    author: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }
 }, {
     timestamps: true
 });

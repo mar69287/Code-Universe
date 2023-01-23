@@ -1,5 +1,20 @@
-<%- include('../partials/header') %>
+<%- include('../partials/head') %>
 
+<nav>
+  <a href="/">Home</a>
+</nav>
 
+<a href="/projects/new">New Project</a>
+
+<% projects.forEach((p) => { %>
+<div>
+    <h2>User's Name</h2>
+    <p><%= p.content %></p>
+    <div>
+        <h4 style="display: inline-block;">Members Wanted: </h4>
+        <p style="display: inline-block;"><%= p.members %></p>
+    </div>
+</div>
+<% }) %>
 
 <%- include('../partials/footer') %>

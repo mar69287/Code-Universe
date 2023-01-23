@@ -1,0 +1,21 @@
+<%- include('../partials/head') %>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/projects">Projects</a>
+</nav>
+  
+<div class="new">
+    <h2>Create Project</h2>
+    <form action="/projects" method="POST">
+      <label>Content:
+        <input type="string" name="content">
+      </label><br>
+      <label>Max Members:
+        <input type="number" name="members">
+      </label><br>
+      <button type="submit">Add Project</button>
+    </form>
+</div>
+
+<%- include('../partials/footer') %>
