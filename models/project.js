@@ -9,6 +9,11 @@ const volunteerSchema = new Schema({
     },
     github: {
         type: String,
+    },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
     }
 }, {
     timestamps: true

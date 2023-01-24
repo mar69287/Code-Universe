@@ -11,5 +11,4 @@ function index(req, res, next) {
             let value = 3600;
             res.render('competitions/index', { title: 'Code Universe', compInfo, value })
         });
-    // res.render('competitions/index', { title: 'Code Universe' })
 }
