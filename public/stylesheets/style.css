@@ -1,6 +1,6 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
 }
 
 a {
@@ -16,4 +16,118 @@ a {
 
 .login img {
   height: 30px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: beige;
+  border: 2px lightgray solid;
+
+}
+
+nav>div {
+  height: 70px;
+  width: 30%;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.logo>div>h4 {
+  text-align: center;
+  margin: 0;
+}
+
+.logo>div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-left: 40px;
+}
+
+nav>div:last-child {
+  justify-content: right;
+  color: black;
+  font-size: 1.2rem;
+}
+
+.auth {
+  padding-right: 40px;
+  padding-left: 40px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth>a {
+  text-decoration: none;
+  color: black;
+}
+
+nav>div:last-child>a {
+  display: flex;
+  justify-content: right;
+}
+
+nav>div>a {
+  height: 70px;
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+}
+
+
+nav>div:last-child>a:hover {
+  background-color: rgb(172, 172, 153);
+}
+
+i {
+  font-size: 2.5rem;
+}
+
+.home {
+  margin-top: 85px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+
+.title {
+  font-size: 4rem;
+  margin: 0;
+}
+
+.pages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  text-align: center;
+}
+
+.pages>a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
 }
