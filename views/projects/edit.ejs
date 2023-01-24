@@ -1,11 +1,6 @@
 <%- include('../partials/head') %>
 
-<nav>
-    <a href="/">Home</a>
-    <a href="/projects">Projects</a>
-    <a href="/projects/<%= project._id %>/">Return</a>
-</nav>
-
+<a href="/projects/<%= project._id %>/">Return</a>
 <form action="/projects/<%= project.id %>?_method=PUT" method="POST" autocomplete="off">
     <label>Content:
         <input type="string" name="content" value="<%=project.content%>">

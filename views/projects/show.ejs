@@ -1,12 +1,5 @@
 <%- include('../partials/head') %>
 
-<nav>
-    <a href="/">Home</a>
-    <a href="/competitions">Competitions</a>
-    <a href="/projects">Projects</a>
-    <a href="/projects/<%= project.id %>/edit">Edit Project</a>
-</nav>
-
 <div style="display: flex;">
     <img alt="avatar" src="<%= project.userAvatar %>"" referrerpolicy="no-referrer" >
     <h2><%= project.userName %></h2>
@@ -31,12 +24,14 @@
       <tbody>
         <% project.volunteers.forEach(function(v) { %>
           <tr>
-            <td><%= v.name %></td>
+            <td><%= v.userName %></td>
             <td><%= v.github %></td>
             <td>
+              <% if (user?._id.equals(v.user)) { %>
               <form action="/volunteers/<%= v._id %>?_method=DELETE" class="delete-form" method="POST">
                 <button type="submit">X</button>
               </form>
+              <% } %>
             </td>
           </tr>
         <% }); %>
@@ -46,16 +41,16 @@
     <h3>No Volunteers Yet</h3>
   <% } %>
 
+  <% if (user) { %>
   <br><br><h3>Become a Volunteer</h3>
   <form id="add-volunteer-form" method="POST"
     action="/projects/<%= project._id %>/volunteers">
-    <label>Name:
-      <input type="string" name="name">
-    </label><br>
+    
     <label>Github Link:
       <input type="string" name="github">
     </label><br>
-    <input type="submit" value="Join List">
+    <br><input type="submit" value="Join List">
   </form>
+  <% } %>
 
 <%- include('../partials/footer') %>

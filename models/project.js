@@ -3,10 +3,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const volunteerSchema = new Schema({
-    name: {
-        type: String,
-        required: true
-    },
     github: {
         type: String,
     },
@@ -14,7 +10,8 @@ const volunteerSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User',
         required: true
-    }
+    },
+    userName: String
 }, {
     timestamps: true
 });

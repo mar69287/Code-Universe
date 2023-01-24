@@ -131,3 +131,8 @@ i {
   justify-content: center;
   padding: 10px;
 }
+
+#home-image {
+  width: 750px;
+  height: 443px;
+}

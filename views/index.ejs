@@ -1,24 +1,12 @@
 <%- include('./partials/head') %>
-    <nav>
-      <a href="/projects/">Projects</a>
-      <a href="/competitions/">Competitions</a>
-      <!-- <a href="/flights/new">New Flight</a> -->
-      <% if (user) { %>
-        <a href="/logout">LOG OUT</a>
-      <% } else { %>
-        <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
-      <% } %>
-    </nav>
+    
 
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <br>
-   
-    <h2>Programming News</h2>
-    <% for(i = 0; i < 6; i++) { %>
-    <h2><%= newsInfo.articles[i].title %></h2>
-    <p><%= newsInfo.articles[i].description %></p>
-    <a href="<%= newsInfo.articles[i].url %>">Visit</a>
-    <% } %>
+    <main class="home">
+      <h1 class="title"><%= title %></h1>
+      <img id="home-image" src="/public/images/team.jpg" alt="">
+      <p>Our website connects you with a community of like-minded programmers, where you can join or create teams to collaborate on coding projects. By working with a team, you can learn new skills, share knowledge, and gain valuable experience in a supportive and collaborative environment. Whether you're a student looking for group projects, a freelancer looking for a new project, or a professional looking to expand your skills, our website is the perfect place to find the right team and get started on your coding journey.</p>
+    </main>
 
+
+    
 <%- include('./partials/footer') %>

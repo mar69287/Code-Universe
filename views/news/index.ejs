@@ -1,0 +1,14 @@
+<%- include('../partials/head') %>
+
+  <h2>Programming News</h2>
+
+  <div>
+    <% for(i = 0; i < 6; i++) { %>
+    <img src="<%= newsInfo.articles[i].urlToImage %>">
+    <h2><%= newsInfo.articles[i].title %></h2>
+    <p><%= newsInfo.articles[i].description %></p>
+    <a href="<%= newsInfo.articles[i].url %>">Visit</a>
+    <% } %>
+  </div>
+
+<%- include('../partials/footer') %>

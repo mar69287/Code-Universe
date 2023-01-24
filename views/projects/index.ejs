@@ -1,9 +1,5 @@
 <%- include('../partials/head') %>
 
-<nav>
-  <a href="/">Home</a>
-  <a href="/competitions">Competitions</a>
-</nav>
 
 <a href="/projects/new">New Project</a>
 
@@ -20,9 +16,11 @@
         <p style="display: inline-block;"><%= p.members %></p>
     </div>
     <a href="/projects/<%= p._id %>">DETAILS</a>
+    <% if (user?._id.equals(p.author)) { %>
     <form action="/projects/<%= p.id %>?_method=DELETE" class="delete-form" method="POST">
       <button type="submit">X</button>
     </form>
+    <% } %>
 </div>
 <% }) %>
 

@@ -1,10 +1,11 @@
 var express = require('express');
 var router = express.Router();
 const passport = require('passport');
-const newsCtrl = require("../controllers/news")
 
 /* GET home page. */
-router.get('/', newsCtrl.index);
+router.get('/', function (req, res, next) {
+  res.render('index', { title: 'Code Universe' });
+});
 
 router.get('/auth/google', passport.authenticate(
   // Which passport strategy is being used?
