@@ -1,27 +1,33 @@
 <%- include('../partials/head') %>
 
 
-<a href="/projects/new">New Project</a>
-
-<% projects.forEach((p) => { %>
-<div>
-  <br>
-  <div style="display: flex;">
-    <img alt="avatar" src="<%= p.userAvatar %>"" referrerpolicy="no-referrer" >
-    <h2><%= p.userName %></h2>
-  </div>
-    <p><%= p.content %></p>
-    <div>
-        <h4 style="display: inline-block;">Members Wanted: </h4>
-        <p style="display: inline-block;"><%= p.members %></p>
+<main>
+  <a  id="new-project" href="/projects/new">New Project</a>
+  
+  <% projects.forEach((p) => { %>
+  <div>
+    <br>
+    <div style="display: flex;">
+      <img alt="avatar" src="<%= p.userAvatar %>"" referrerpolicy="no-referrer" >
+      <h2><%= p.userName %></h2>
     </div>
-    <a href="/projects/<%= p._id %>">DETAILS</a>
-    <% if (user?._id.equals(p.author)) { %>
-    <form action="/projects/<%= p.id %>?_method=DELETE" class="delete-form" method="POST">
-      <button type="submit">X</button>
-    </form>
-    <% } %>
-</div>
-<% }) %>
+      <p><%= p.content %></p>
+      <div>
+          <h4 style="display: inline-block;">Members Wanted: </h4>
+          <p style="display: inline-block;"><%= p.members %></p>
+      </div>
+      <a href="/projects/<%= p._id %>">DETAILS</a>
+      <% if (user?._id.equals(p.author)) { %>
+      <form action="/projects/<%= p.id %>?_method=DELETE" class="delete-form" method="POST">
+        <button type="submit">X</button>
+      </form>
+      <% } %>
+  </div>
+  <% }) %>
+
+
+
+
+</main>
 
 <%- include('../partials/footer') %>
