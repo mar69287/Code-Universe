@@ -8,12 +8,20 @@
 
 <% projects.forEach((p) => { %>
 <div>
-    <h2>User's Name</h2>
+  <br>
+  <div style="display: flex;">
+    <img alt="avatar" src="<%= p.userAvatar %>"" referrerpolicy="no-referrer" >
+    <h2><%= p.userName %></h2>
+  </div>
     <p><%= p.content %></p>
     <div>
         <h4 style="display: inline-block;">Members Wanted: </h4>
         <p style="display: inline-block;"><%= p.members %></p>
     </div>
+    <a href="/projects/<%= p._id %>">DETAILS</a>
+    <form action="/projects/<%= p.id %>?_method=DELETE" class="delete-form" method="POST">
+      <button type="submit">X</button>
+    </form>
 </div>
 <% }) %>
 

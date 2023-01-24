@@ -2,6 +2,18 @@ const mongoose = require('mongoose');
 // optional shortcut to the mongoose.Schema class
 const Schema = mongoose.Schema;
 
+const volunteerSchema = new Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    github: {
+        type: String,
+    }
+}, {
+    timestamps: true
+});
+
 const projectSchema = new Schema({
     content: {
         type: String,
@@ -19,7 +31,10 @@ const projectSchema = new Schema({
     author: {
         type: Schema.Types.ObjectId,
         ref: 'User'
-    }
+    },
+    userName: String,
+    userAvatar: String,
+    volunteers: [volunteerSchema]
 }, {
     timestamps: true
 });

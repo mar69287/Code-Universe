@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var methodOverride = require('method-override');
 
 var session = require('express-session');
 const passport = require('passport');
@@ -13,6 +14,8 @@ require('./config/passport');
 
 var indexRouter = require('./routes/index');
 var projectsRouter = require('./routes/projects');
+const volunteersRouter = require('./routes/volunteers')
+const competitionsRouter = require('./routes/competitions')
 
 var app = express();
 
@@ -30,6 +33,7 @@ app.use(session({
   saveUninitialized: true
 }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'));
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -41,6 +45,8 @@ app.use(function (req, res, next) {
 
 app.use('/', indexRouter);
 app.use('/projects', projectsRouter);
+app.use('/', volunteersRouter);
+app.use('/competitions', competitionsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

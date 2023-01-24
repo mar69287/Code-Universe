@@ -1,0 +1,60 @@
+<%- include('../partials/head') %>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/projects">Projects</a>
+    <a href="/projects/<%= project.id %>/edit">Edit Project</a>
+</nav>
+
+<div style="display: flex;">
+    <img alt="avatar" src="<%= project.userAvatar %>"" referrerpolicy="no-referrer" >
+    <h2><%= project.userName %></h2>
+  </div>
+    <p><%= project.content %></p>
+    <div>
+        <h4 style="display: inline-block;">Members Wanted: </h4>
+        <p style="display: inline-block;"><%= project.members %></p>
+    </div>
+</div>
+
+<% if (project.volunteers.length) { %>
+    <h3>Volunteers</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Github</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% project.volunteers.forEach(function(v) { %>
+          <tr>
+            <td><%= v.name %></td>
+            <td><%= v.github %></td>
+            <td>
+              <form action="/volunteers/<%= v._id %>?_method=DELETE" class="delete-form" method="POST">
+                <button type="submit">X</button>
+              </form>
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h3>No Volunteers Yet</h3>
+  <% } %>
+
+  <br><br><h3>Become a Volunteer</h3>
+  <form id="add-volunteer-form" method="POST"
+    action="/projects/<%= project._id %>/volunteers">
+    <label>Name:
+      <input type="string" name="name">
+    </label><br>
+    <label>Github Link:
+      <input type="string" name="github">
+    </label><br>
+    <input type="submit" value="Join List">
+  </form>
+
+<%- include('../partials/footer') %>
