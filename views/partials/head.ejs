@@ -25,9 +25,10 @@
     <div>
       <div class="auth">
         <% if (user) { %>
-        <a href="/logout">LOG OUT</a>
+        <a class="profile-link" href="/users/<%= user._id %>">Profile</a>
+        <a class="login-link" href="/logout">LOG OUT</a>
         <% } else { %>
-        <a href="/auth/google" class="login">LOG IN</a>
+        <a class="login-link" href="/auth/google" class="login">LOG IN</a>
         <% } %>
       </div>
     </div>

@@ -70,7 +70,28 @@ nav>div:last-child {
   font-size: 1.2rem;
 }
 
-.auth,
+.auth {
+  height: 78px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 40px;
+  background-color: #24252A;
+}
+
+.profile-link {
+  background-color: #24252A;
+  height: 78px;
+  padding: 0 15px;
+  transition: all 0.3s ease 0s;
+}
+
+.login-link {
+  padding: 10px 20px;
+  background-color: rgb(0, 136, 169, 1);
+  border-radius: 20px;
+}
+
 #new-project {
   padding-right: 20px;
   padding-left: 20px;
@@ -87,12 +108,13 @@ nav>div:last-child {
 .auth>a {
   text-decoration: none;
   display: flex;
-  justify-content: right;
+  justify-content: center;
+  align-items: center;
   color: #ecf0f1;
-  background-color: rgb(0, 136, 169, 1);
+  /* background-color: rgb(0, 136, 169, 1); */
 }
 
-.auth:hover {
+.login-link:hover {
   background-color: rgb(0, 136, 169, .7);
   cursor: pointer;
 }
@@ -115,7 +137,8 @@ nav>div:last-child {
   transition: all 0.3s ease 0s;
 }
 
-.pages>a:hover {
+.pages>a:hover,
+.profile-link:hover {
   color: #0088a9;
   cursor: pointer;
 }
