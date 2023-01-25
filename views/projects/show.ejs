@@ -1,56 +1,88 @@
 <%- include('../partials/head') %>
 
-<div style="display: flex;">
-    <img alt="avatar" src="<%= project.userAvatar %>"" referrerpolicy="no-referrer" >
-    <h2><%= project.userName %></h2>
-  </div>
-    <p><%= project.content %></p>
-    <div>
-        <h4 style="display: inline-block;">Members Wanted: </h4>
-        <p style="display: inline-block;"><%= project.members %></p>
-    </div>
-</div>
-
-<% if (project.volunteers.length) { %>
-    <h3>Volunteers</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Github</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% project.volunteers.forEach(function(v) { %>
-          <tr>
-            <td><%= v.userName %></td>
-            <td><%= v.github %></td>
-            <td>
-              <% if (user?._id.equals(v.user)) { %>
-              <form action="/volunteers/<%= v._id %>?_method=DELETE" class="delete-form" method="POST">
-                <button type="submit">X</button>
-              </form>
-              <% } %>
-            </td>
-          </tr>
-        <% }); %>
-      </tbody>
-    </table>
-  <% } else { %>
-    <h3>No Volunteers Yet</h3>
-  <% } %>
-
+<main>
   <% if (user) { %>
-  <br><br><h3>Become a Volunteer</h3>
-  <form id="add-volunteer-form" method="POST"
-    action="/projects/<%= project._id %>/volunteers">
-    
-    <label>Github Link:
-      <input type="string" name="github">
-    </label><br>
-    <br><input type="submit" value="Join List">
-  </form>
+  <a  id="edit-project" href="/projects/<%= project.id %>/edit">Edit Project</a>
   <% } %>
+  <section class="show">
+    
+    
+    <div class="project-card">
+      <div class="specific-header">
+        <img class="show-pic" alt="avatar" src="<%= project.userAvatar %>"" referrerpolicy="no-referrer" >
+        <div class="post-info">
+          <h2 class="post-author"><%= project.userName %></h2>
+        </div>
+      </div>
+      <div class="project-members">
+        <h4>Members Wanted: </h4>
+        <p><%= project.members %></p>
+      </div>
+      <div class="project-content">
+        <p><%= project.content %></p>
+      </div>
+      <div class="project-footer">
+        <div class="specific-details">
+          <p class="specific-date">Posted on: <%= date%></p>
+        </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+    
+    <div class="members">
+
+      <div class="sign-ups">
+        <% if (project.volunteers.length) { %>
+            <h3 class="member-headers">Volunteers</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Github</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% project.volunteers.forEach(function(v, idx) { %>
+                  <tr>
+                    <td><%= idx+1 %></td>
+                    <td><%= v.userName %></td>
+                    <td><a href="<%= v.github %>">Visit</a></td>
+                    <td>
+                      <% if (user?._id.equals(v.user)) { %>
+                      <form action="/volunteers/<%= v._id %>?_method=DELETE" class="delete-form" method="POST">
+                        <button type="submit">X</button>
+                      </form>
+                      <% } %>
+                    </td>
+                  </tr>
+                <% }); %>
+              </tbody>
+            </table>
+          <% } else { %>
+            <h3 class="member-headers">No Volunteers Yet</h3>
+          <% } %>
+      </div>
+    
+        <div class="member-form">
+          <% if (user) { %>
+          <h3 class="member-headers">Become a Volunteer</h3>
+          <form id="add-volunteer-form" method="POST"
+            action="/projects/<%= project._id %>/volunteers">
+              <input type="string" name="github" placeholder="Github Link">
+              <input type="submit" value="Join List">
+          </form>
+          <% } else { %>
+          <h3 class="member-headers">Sign in to join a project</h3>
+          <% } %>
+        </div>
+
+    </div>
+  </section>
+</main>
 
 <%- include('../partials/footer') %>

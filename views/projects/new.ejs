@@ -1,17 +1,19 @@
 <%- include('../partials/head') %>
 
   
-<div class="new">
-    <h2>Create Project</h2>
-    <form action="/projects" method="POST">
-      <label>Content:
-        <input type="string" name="content">
-      </label><br>
-      <label>Max Members:
-        <input type="number" name="members">
-      </label><br>
-      <button type="submit">Add Project</button>
-    </form>
-</div>
+<main class="new-main">
+  <div class="new">
+      <h2>Create Project</h2>
+      <form action="/projects" method="POST">
+          <textarea name="content" cols="2" rows="2" placeholder="Content"></textarea>
+          <!-- <input type="string" name="content" placeholder="Content"> -->
+        <!-- </label><br>
+        <label>Max Members: -->
+          <input type="number" name="members" placeholder="Members Wanted">
+        <!-- </label><br> -->
+        <button type="submit">Add Project</button>
+      </form>
+  </div>
+</main>
 
 <%- include('../partials/footer') %>

@@ -11,10 +11,12 @@ module.exports = {
 }
 
 function index(req, res) {
-    Project.find({}, function (err, projects) {
-        console.log(projects)
-        res.render("projects/index", { projects })
-    })
+    Project.find({})
+        .sort({ "createdAt": -1 })
+        .exec(function (err, projects) {
+            console.log(projects)
+            res.render("projects/index", { projects })
+        })
 }
 
 function newProject(req, res) {
@@ -36,7 +38,10 @@ function create(req, res) {
 
 function show(req, res) {
     Project.findById(req.params.id, function (err, project) {
-        res.render('projects/show', { project });
+        var date = new Date(project.createdAt);
+        var options = { timeZone: 'America/Los_Angeles' };
+        date = date.toLocaleDateString("en-US", options) + " " + date.toLocaleTimeString("en-US", options) + " (PST)";
+        res.render('projects/show', { project, date });
     });
 }
 

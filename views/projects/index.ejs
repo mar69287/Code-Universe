@@ -4,29 +4,41 @@
 <main>
   <a  id="new-project" href="/projects/new">New Project</a>
   
+
+<section class="posts-container">
+  
   <% projects.forEach((p) => { %>
-  <div>
-    <br>
-    <div style="display: flex;">
-      <img alt="avatar" src="<%= p.userAvatar %>"" referrerpolicy="no-referrer" >
-      <h2><%= p.userName %></h2>
-    </div>
-      <p><%= p.content %></p>
-      <div>
-          <h4 style="display: inline-block;">Members Wanted: </h4>
-          <p style="display: inline-block;"><%= p.members %></p>
+  <div class="project-container">
+    <div class="project-header">
+      <img class="author-pic" alt="avatar" src="<%= p.userAvatar %>"" referrerpolicy="no-referrer" >
+      <div class="post-info">
+        <h2 class="post-author"><%= p.userName %></h2>
+        <p class="post-date"><%= p.createdAt.toLocaleDateString() %></p>
       </div>
-      <a href="/projects/<%= p._id %>">DETAILS</a>
-      <% if (user?._id.equals(p.author)) { %>
-      <form action="/projects/<%= p.id %>?_method=DELETE" class="delete-form" method="POST">
-        <button type="submit">X</button>
-      </form>
-      <% } %>
+    </div>
+    <div class="project-members">
+      <h4>Members Wanted: </h4>
+      <p><%= p.members %></p>
+    </div>
+    <div class="project-content">
+      <p><%= p.content %></p>
+    </div>
+    <div class="project-footer">
+      <div class="project-details">
+        <a href="/projects/<%= p._id %>">DETAILS</a>
+      </div>
+      <div class="project-delete">
+        <% if (user?._id.equals(p.author)) { %>
+        <form action="/projects/<%= p.id %>?_method=DELETE" class="delete-form" method="POST">
+          <button type="submit">X</button>
+        <% } %>
+        </form>
+      </div>
+    </div>
   </div>
   <% }) %>
 
-
-
+</section>
 
 </main>
 

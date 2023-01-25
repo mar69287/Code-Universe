@@ -1,14 +1,31 @@
 <%- include('../partials/head') %>
 
-  <h2>Programming News</h2>
+  <main>
+    <h2 class="news-title">Programming News</h2>
+    <div class="news-container">
+        <% for(i = 0; i < 6; i++) { %>
+        <div class="news-card">
+          
+          <div class="news-header">
+            <img class="news-image" src="<%= newsInfo.articles[i].urlToImage %>">
+          </div>
 
-  <div>
-    <% for(i = 0; i < 6; i++) { %>
-    <img src="<%= newsInfo.articles[i].urlToImage %>">
-    <h2><%= newsInfo.articles[i].title %></h2>
-    <p><%= newsInfo.articles[i].description %></p>
-    <a href="<%= newsInfo.articles[i].url %>">Visit</a>
-    <% } %>
-  </div>
+          <div class="news-content">
+
+            <div class="article-title">
+              <h2><%= newsInfo.articles[i].title %></h2>
+            </div>
+
+            <p><%= newsInfo.articles[i].description %></p>
+          </div>
+
+          <div class="news-footer">
+            <a href="<%= newsInfo.articles[i].url %>">Visit</a>
+          </div>
+
+        </div>
+        <% } %>
+    </div>
+  </main>
 
 <%- include('../partials/footer') %>

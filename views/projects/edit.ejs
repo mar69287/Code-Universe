@@ -1,15 +1,18 @@
 <%- include('../partials/head') %>
 
-<a href="/projects/<%= project._id %>/">Return</a>
-<form action="/projects/<%= project.id %>?_method=PUT" method="POST" autocomplete="off">
-    <label>Content:
-        <input type="string" name="content" value="<%=project.content%>">
-      </label><br>
-      <label>Max Members:
-        <input type="number" name="members" value="<%=project.members%>" max="20">
-      </label><br>
-      <button type="submit">Edit</button>
+<main>
+  <div class="new">
+    <h2>Edit Project</h2>
+    <form action="/projects/<%= project.id %>?_method=PUT" method="POST" autocomplete="off">
+        <textarea name="content" cols="2" rows="2"><%=project.content%></textarea>
+            <!-- <input type="string" name="content" value="<%=project.content%>"> -->
+          <!-- <label>Max Members: -->
+            <input type="number" name="members" value="<%=project.members%>" max="20">
+          <!-- </label><br> -->
+          <button type="submit">Edit</button>
     </form>
-</form>
+    <a class="edit-link" href="/projects/<%= project._id %>/">Return</a>
+  </div>
+</main>
 
 <%- include('../partials/footer') %>

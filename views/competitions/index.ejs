@@ -1,29 +1,32 @@
 <%- include('../partials/head') %>
 
-<h3>Competitions</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Site</th>
-          <th>Website</th>
-          <th>Status</th>
-          <th>Start Time</th>
-          <th>Duration (hrs)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% for(i = 0; i < 20; i++) { %>
-          <tr>
-            <td><%= compInfo[i].name %></td>
-            <td><%= compInfo[i].site %></td>
-            <td><a href="<%= compInfo[i].url %>">Link</a></td>
-            <td><%= compInfo[i].status %></td>
-            <td><%= compInfo[i].start_time %></td>
-            <td><%= Math.round(((compInfo[i].duration / value) * 100) / 100) %></td>
-          </tr>
-        <% } %>
-      </tbody>
-    </table>
+<main>
+      <section class="competitions">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Site</th>
+              <th>Website</th>
+              <th>Status</th>
+              <th>Start Time</th>
+              <th>Duration (hrs)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(i = 0; i < 20; i++) { %>
+              <tr>
+                <td><%= compInfo[i].name %></td>
+                <td><%= compInfo[i].site %></td>
+                <td><a href="<%= compInfo[i].url %>">Visit</a></td>
+                <td><%= compInfo[i].status %></td>
+                <td><%= compInfo[i].start_time %></td>
+                <td><%= Math.round(((compInfo[i].duration / value) * 100) / 100) %></td>
+              </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </section>
+</main>
 
 <%- include('../partials/footer') %>
