@@ -1,0 +1,30 @@
+<%- include('../partials/head') %>
+
+  
+<main class="new-main">
+  <div id="create-profile" class="new">
+      <h2>Create Profile</h2>
+      <form action="/profiles" method="POST">
+
+          <div>
+            <div class="profile-inputs">
+              <label>Name</label>
+              <input type="String" name="name">
+              <label>Email</label>
+              <input type="String" name="email">
+              <label>Age</label>
+              <input type="Number" name="age">
+              <label>Location</label>
+              <input type="String" name="location">
+            </div>
+            <div class="profile-textarea">
+              <textarea name="bio" cols="2" rows="2" placeholder="Bio"></textarea>
+            </div>
+          </div>
+
+          <button type="submit">Continue</button>
+      </form>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>

@@ -26,10 +26,6 @@ const projectSchema = new Schema({
         min: [1, "too low"],
         max: [20, "too high"]
     },
-    // created: {
-    //     type: Date,
-    //     default: Date.now
-    // },
     author: {
         type: Schema.Types.ObjectId,
         ref: 'User'

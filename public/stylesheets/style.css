@@ -745,3 +745,244 @@ td>a:hover {
   align-items: center;
   justify-content: center;
 }
+
+/* profile */
+
+.profile-show {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 80px;
+  width: 100%;
+  /* border: solid 5px aqua; */
+}
+
+.profile-details,
+.profile-main,
+.profile-followers {
+  margin: 0 .5rem;
+  /* border: 5px red solid; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: inset 0px 0px .5rem #888;
+}
+
+.profile-details,
+.profile-followers {
+  width: 20%;
+  height: 600px;
+  padding: 1rem;
+}
+
+.profile-followers>h2 {
+  margin: 0;
+  background-color: rgb(255, 255, 255);
+}
+
+.profile-main {
+  width: 35%;
+  background-color: rgb(237, 229, 250);
+  padding: 1rem;
+}
+
+.profile-main>h1 {
+  margin: 0;
+  margin-bottom: 1rem;
+  background-color: rgb(237, 229, 250);
+
+}
+
+.profile-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+
+}
+
+.profile-image>img {
+  width: 9rem;
+  height: 9rem;
+  border-radius: 10rem;
+}
+
+.profile-details>div:nth-child(2) {
+  background-color: rgb(255, 255, 255);
+
+}
+
+#profile-name {
+  margin: 0;
+  margin-top: .5rem;
+  font-size: 1.2rem;
+  background-color: rgb(255, 255, 255);
+}
+
+#profile-location {
+  background-color: rgb(255, 255, 255);
+  margin: 0;
+  margin-top: .4rem;
+  color: #707070;
+}
+
+.profile-details>div:last-child {
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+#profile-bio {
+  background-color: rgb(255, 255, 255);
+  letter-spacing: 1px;
+  font-size: 1rem;
+}
+
+.profile-main>.profile-posts {
+  width: 100%;
+  background-color: rgb(237, 229, 250);
+}
+
+.profile-small>img {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.profile-small>h2 {
+  font-size: 1rem;
+}
+
+.profile-small>p {
+  font-size: .8rem;
+}
+
+/* profile create form */
+
+#create-profile {
+  margin: 0;
+  width: 40%;
+  height: 60vh;
+  margin-top: 4rem;
+  align-items: center;
+  justify-content: center;
+}
+
+#create-profile>form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 50%;
+  background-color: rgb(255, 255, 255);
+}
+
+#create-profile>form>button {
+  margin: 0 auto;
+}
+
+#create-profile>form>div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: .5rem;
+}
+
+.profile-inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 40%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+}
+
+.profile-inputs>label {
+  font-size: 1rem;
+  margin-bottom: .3rem;
+  background-color: rgb(255, 255, 255);
+}
+
+.profile-inputs>input {
+  margin-bottom: .8rem;
+  padding: 5px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+}
+
+.profile-textarea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+}
+
+.profile-textarea>textarea {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: rgb(255, 255, 255);
+  height: 60%;
+  width: 80%;
+}
+
+/* 
+#create-profile>form>div:first-child {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.profile-inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#create-profile>h2 {
+  margin: 0;
+  /* margin-bottom: 1rem; */
+}
+
+#create-profile>form {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#create-profile>form>label {
+  margin: 0;
+  margin-bottom: .5rem;
+  background-color: rgb(255, 255, 255);
+}
+
+
+#create-profile>form>input {
+  width: 100%;
+  padding: .5rem;
+}
+
+#create-profile>form {
+  margin: 0;
+  margin-bottom: .5rem;
+  height: 70%;
+  align-items: flex-start;
+}

@@ -1,0 +1,59 @@
+<%- include('../partials/head') %>
+
+<main class="profile-show">
+    <section class="profile-details">
+
+        <div class="profile-image"><img src="<%= profile.avatar %>"" alt=""></div>
+
+        <div>
+            <h3 id="profile-name"><%= profile.name %></h3>
+            <p id="profile-location"><%= profile.location %></p>
+        </div>
+        <div>
+            <p id="profile-bio"><%= profile.bio %></p>
+        </div>
+    </section>
+
+    <section class="profile-main">
+        <h1>Posts</h1>
+        <div class="profile-posts">
+            <% projects.forEach((p) => { %>
+                <div class="project-container">
+                  <div class="profile-small project-header">
+                    <img class="author-pic" alt="avatar" src="<%= p.userAvatar %>"" referrerpolicy="no-referrer" >
+                    <div class="profile-small post-info">
+                      <h2 class="post-author"><%= p.userName %></h2>
+                      <p class="post-date"><%= p.createdAt.toLocaleDateString() %></p>
+                    </div>
+                  </div>
+                  <div class="project-members">
+                    <h4>Members Wanted: </h4>
+                    <p><%= p.members %></p>
+                  </div>
+                  <div class="project-content">
+                    <p><%= p.content %></p>
+                  </div>
+                  <div class="project-footer">
+                    <div class="project-details">
+                      <a href="/projects/<%= p._id %>">DETAILS</a>
+                    </div>
+                    <div class="project-delete">
+                      <% if (user?._id.equals(p.author)) { %>
+                      <form action="/projects/<%= p.id %>?_method=DELETE" class="delete-form" method="POST">
+                        <button type="submit">X</button>
+                      <% } %>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <% }) %>
+        </div>
+    </section>
+
+    <section class="profile-followers">
+        <h2>Connections</h2>
+        <div class="profile-friends"></div>
+    </section>
+</main>
+
+<%- include('../partials/footer') %>
