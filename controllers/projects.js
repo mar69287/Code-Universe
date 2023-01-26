@@ -1,4 +1,5 @@
 const Project = require("../models/project")
+const Profile = require("../models/profile")
 
 module.exports = {
     index,

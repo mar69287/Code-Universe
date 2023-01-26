@@ -11,26 +11,26 @@ module.exports = {
 }
 
 function index(req, res) {
-
-    Project.find({ author: req.user._id }, function (err, projects) {
+    // Project.find({ author: req.user._id }, function (err, projects) {
+    //     if (err) {
+    //         console.log(err);
+    //     } else {
+    Profile.findOne({ user: req.user._id }, function (err, profile) {
         if (err) {
             console.log(err);
         } else {
-            Profile.findOne({ user: req.user._id }, function (err, profile) {
-                if (err) {
-                    console.log(err);
-                } else {
-                    if (profile) {
-                        res.render('profiles/show', { projects, profile });
-                    } else {
-                        res.render('profiles/new')
-                    }
+            if (profile) {
+                res.redirect(`profiles/${profile.id}`);
+            } else {
+                res.redirect('profiles/new')
+            }
 
-                }
-            });
         }
     });
-};
+}
+// });
+
+// };
 
 
 
@@ -62,7 +62,7 @@ function create(req, res) {
         console.log(profile);
         console.log(profile.user)
         console.log(req.user._id)
-        res.redirect('/profiles/show');
+        res.redirect('/profiles/${profile.id}');
     });
 }
 
@@ -78,7 +78,7 @@ function show(req, res) {
                     if (profile) {
                         res.render('profiles/show', { projects, profile });
                     } else {
-                        res.render('profiles/new')
+                        res.redirect('new')
                     }
 
                 }

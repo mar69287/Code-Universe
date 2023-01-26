@@ -14,6 +14,7 @@ require('./config/passport');
 
 var indexRouter = require('./routes/index');
 var profilesRouter = require('./routes/profiles');
+var skillsRouter = require('./routes/skills');
 var projectsRouter = require('./routes/projects');
 const volunteersRouter = require('./routes/volunteers')
 const competitionsRouter = require('./routes/competitions')
@@ -48,6 +49,7 @@ app.use(function (req, res, next) {
 app.use('/', indexRouter);
 app.use('/profiles', profilesRouter);
 app.use('/projects', projectsRouter);
+app.use("/", skillsRouter)
 app.use('/', volunteersRouter);
 app.use('/competitions', competitionsRouter);
 app.use('/news', newsRouter);
