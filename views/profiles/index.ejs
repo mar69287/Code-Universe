@@ -1,7 +1,24 @@
 <%- include('../partials/head') %>
 
 <main class="profile-index">
-    <a href=""></a>
+
+    <section class="posts-container">
+  
+        <% profiles.forEach((p) => { %>
+        <div class="project-container">
+          <div class="project-header">
+            <img class="author-pic" alt="avatar" src="<%= p.avatar %>"" referrerpolicy="no-referrer" >
+            <div class="post-info">
+              <h2 class="post-author"><%= p.name %></h2>
+            </div>
+            <div class="project-details">
+              <a href="/profiles/<%= p._id %>">Visit</a>
+            </div>
+          </div>        
+        </div>
+        <% }) %>
+      </section>
+
 </main>
 
 <%- include('../partials/footer') %>
