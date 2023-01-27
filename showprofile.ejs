@@ -17,8 +17,7 @@
     <section class="profile-main">
         <h1>Posts</h1>
         <div class="profile-posts">
-            <% if (profile.projects) { %>
-            <% profile.projects.forEach((p) => { %>
+            <% projects.forEach((p) => { %>
                 <div class="project-container">
                   <div class="profile-small project-header">
                     <img class="author-pic" alt="avatar" src="<%= p.userAvatar %>"" referrerpolicy="no-referrer" >
@@ -48,7 +47,6 @@
                   </div>
                 </div>
                 <% }) %>
-                <% } %>
         </div>
     </section>
 

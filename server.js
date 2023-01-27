@@ -19,6 +19,7 @@ var projectsRouter = require('./routes/projects');
 const volunteersRouter = require('./routes/volunteers')
 const competitionsRouter = require('./routes/competitions')
 const newsRouter = require('./routes/news')
+const userRouter = require('./routes/user')
 
 var app = express();
 
@@ -53,6 +54,7 @@ app.use("/", skillsRouter)
 app.use('/', volunteersRouter);
 app.use('/competitions', competitionsRouter);
 app.use('/news', newsRouter);
+app.use('/users', userRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

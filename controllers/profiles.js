@@ -10,31 +10,40 @@ module.exports = {
     // update
 }
 
+// function index(req, res) {
+//     Profile.find({})
+//         .exec(function (err, profiles) {
+//             console.log(profiles)
+//             res.render("profiles/index", { profiles })
+//         })
+// }
+
 function index(req, res) {
+
     Profile.find({})
         .exec(function (err, profiles) {
             console.log(profiles)
             res.render("profiles/index", { profiles })
         })
-}
-// function index(req, res) {
-//     // Project.find({ author: req.user._id }, function (err, projects) {
-//     //     if (err) {
-//     //         console.log(err);
-//     //     } else {
-//     Profile.findOne({ user: req.user._id }, function (err, profile) {
-//         if (err) {
-//             console.log(err);
-//         } else {
-//             if (profile) {
-//                 res.redirect(`profiles/${profile.id}`);
-//             } else {
-//                 res.redirect('profiles/new')
-//             }
 
-//         }
-//     });
-// }
+    // Profile.findOne({ user: req.user._id }, function (err, profile) {
+    //     if (err) {
+    //         console.log(err);
+    //     } else {
+    //         if (profile) {
+    //             res.redirect(`profiles/${profile.id}`);
+    //         } else {
+    //             Profile.find({})
+    //                 .exec(function (err, profiles) {
+    //                     console.log(profiles)
+    //                     res.render("profiles/index", { profiles })
+    //                 })
+    //         }
+
+    //     }
+
+    // }
+}
 // });
 
 // };
@@ -66,34 +75,50 @@ function create(req, res) {
     // console.log(req.body)
     profile.save(function (err) {
         if (err) return res.redirect('/profiles/new');
-        console.log(profile);
-        console.log(profile.user)
-        console.log(req.user._id)
-        res.redirect('/profiles/${profile.id}');
+        res.redirect(`/profiles/${profile._id}`);
     });
 }
 
 function show(req, res) {
-    // Project.find({ _id: req.params.id }, function (err, projects) {
-    Project.find({ author: req.user._id }, function (err, projects) {
-        if (err) {
-            console.log(err);
-        } else {
-            Profile.findOne({ _id: req.params.id }, function (err, profile) {
-                if (err) {
-                    console.log(err);
-                } else {
-                    if (profile) {
-                        res.render('profiles/show', { projects, profile });
-                    } else {
-                        res.redirect('new')
-                    }
 
+    Profile.findOne({ _id: req.params.id })
+        .populate("projects")
+        .exec((error, profile) => {
+            if (error) {
+                console.log(error)
+            } else {
+                if (profile) {
+                    res.render('profiles/show', { profile });
+                } else {
+                    res.redirect('new')
                 }
-            });
-        }
-    });
+            }
+
+        })
+
 }
+
+    // this code works last
+    // Project.find({ author: req.user._id }, function (err, projects) {
+    //     if (err) {
+    //         console.log(err);
+    //     } else {
+    //         Profile.findOne({ _id: req.params.id }, function (err, profile) {
+    //             if (err) {
+    //                 console.log(err);
+    //             } else {
+    //                 if (profile) {
+    //                     res.render('profiles/show', { projects, profile });
+    //                 } else {
+    //                     res.redirect('new')
+    //                 }
+
+    //             }
+    //         });
+    //     }
+    // });
+
+
 
 // function edit(req, res, next) {
 //     Project.findById(req.params.id, function (err, project) {

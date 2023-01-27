@@ -1,4 +1,3 @@
-const url = process.env.NEWS_URL
 
 module.exports = {
     index

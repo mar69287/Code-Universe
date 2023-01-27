@@ -1,18 +1,19 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const skillSchema = new Schema({
-    skill: {
-        type: String,
-    },
-    user: {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-        required: true
-    },
-}, {
-    timestamps: true
-});
+// const skillSchema = new Schema({
+//     skill: {
+//         type: String,
+//     },
+//     user: {
+//         type: Schema.Types.ObjectId,
+//         ref: 'User',
+//         required: true
+//     },
+// }, {
+//     timestamps: true
+// });
+
 
 const profileSchema = new Schema({
     name: String,
@@ -26,7 +27,11 @@ const profileSchema = new Schema({
     },
     avatar: String,
     bio: String,
-    skills: [skillSchema]
+    // skills: [skillSchema],
+    projects: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Project'
+    }]
 }, {
     timestamps: true
 });

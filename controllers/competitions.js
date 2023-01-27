@@ -1,5 +1,3 @@
-const url = process.env.COMP_URL
-
 module.exports = {
     index
 };

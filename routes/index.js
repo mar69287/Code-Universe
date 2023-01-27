@@ -5,9 +5,15 @@ const Profile = require("../models/profile")
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
+  if (req.isAuthenticated()) {
+    Profile.findOne({ user: req.user._id }, function (err, profile) {
+      res.render('index', { title: 'Code Universe', profile });
+    })
+  } else {
+    res.render('index', { title: 'Code Universe' });
+  }
 
-
-  res.render('index', { title: 'Code Universe' });
+  // res.render('index', { title: 'Code Universe' });
 });
 
 router.get('/auth/google', passport.authenticate(
