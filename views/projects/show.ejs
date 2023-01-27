@@ -36,7 +36,7 @@
 
       <div class="sign-ups">
         <% if (project.volunteers.length) { %>
-            <h3 class="member-headers">Volunteers</h3>
+            <h3 class="member-headers">Applicants</h3>
             <table>
               <thead>
                 <tr>
@@ -70,11 +70,11 @@
     
         <div class="member-form">
           <% if (user) { %>
-          <h3 class="member-headers">Become a Volunteer</h3>
+          <h3 class="member-headers">Become a Team Member</h3>
           <form id="add-volunteer-form" method="POST"
             action="/projects/<%= project._id %>/volunteers">
               <input type="string" name="github" placeholder="Github Link">
-              <input type="submit" value="Join List">
+              <input type="submit" value="Join">
           </form>
           <% } else { %>
           <h3 class="member-headers">Sign in to join a project</h3>
