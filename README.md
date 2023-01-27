@@ -1,5 +1,5 @@
 # Code-Universe
-A full CRUD application that aims to foster a collaborative and inclusive community of developers by providing a platform for them to connect, share knowledge, and work together on projects and competitions. Ultimataely promoting innovation and productivity in the field of software development.
+A full CRUD application that aims to foster a collaborative and inclusive community of developers by providing a platform for them to connect, share knowledge, and work together on projects and competitions. Ultimately promoting innovation and productivity in the field of software development.
 
 ## Benefits
 * **Networking:** Developers can work together on projects and competitions, share knowledge, and learn from one another.
