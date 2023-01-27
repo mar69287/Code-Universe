@@ -994,3 +994,50 @@ td>a:hover {
   height: 70%;
   align-items: flex-start;
 }
+
+#profile-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+
+}
+
+#profile-name {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90%;
+  background-color: rgb(255, 255, 255);
+  margin-top: 0;
+}
+
+#profile-name>img {
+  margin-right: .5rem;
+}
+
+.profile-visit {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+
+}
+
+.profile-visit>a {
+  text-decoration: none;
+  font-size: 1rem;
+  background-color: rgb(255, 255, 255);
+  color: rgb(102, 102, 102);
+  padding: .3rem;
+  border: .1rem rgb(102, 102, 102) solid;
+  border-radius: 5px;
+  transition: all 0.2s ease 0s;
+}
+
+.profile-visit>a:hover {
+  border: .1rem rgb(61, 60, 60) solid;
+  background-color: rgba(226, 226, 226, 0.8);
+}

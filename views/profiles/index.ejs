@@ -6,15 +6,17 @@
   
         <% profiles.forEach((p) => { %>
         <div class="project-container">
-          <div class="project-header">
-            <img class="author-pic" alt="avatar" src="<%= p.avatar %>"" referrerpolicy="no-referrer" >
-            <div class="post-info">
+
+          <div id="profile-center">
+            <div id="profile-name">
+              <img class="author-pic" alt="avatar" src="<%= p.avatar %>"" referrerpolicy="no-referrer" >
               <h2 class="post-author"><%= p.name %></h2>
             </div>
-            <div class="project-details">
+            <div class="profile-visit">
               <a href="/profiles/<%= p._id %>">Visit</a>
             </div>
-          </div>        
+          </div>    
+              
         </div>
         <% }) %>
       </section>
