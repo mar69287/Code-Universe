@@ -3,15 +3,34 @@
 <main class="profile-show">
     <section class="profile-details">
 
-        <div class="profile-image"><img src="<%= profile.avatar %>"" alt=""></div>
+        <div class="profile-image">
+          <img src="<%= profile.avatar %>"" alt="">
+        </div>
 
         <div>
             <h3 id="profile-name"><%= profile.name %></h3>
             <p id="profile-location"><%= profile.location %></p>
         </div>
-        <div>
+        <div id="profile-content">
             <h3 id="bio-label">Bio:</h3>
             <p id="profile-bio"><%= profile.bio %></p>
+        </div>
+        <div>
+            <h3 id="bio-label">Portfolio: 
+              <% if (profile.portfolio) { %>
+              <a href="<%= profile.portfolio %>">View</a>
+              <% } %>
+            </h3>
+            <h3 id="bio-label">Github: 
+              <% if (profile.github) { %>
+              <a href="<%= profile.github %>">View</a>
+              <% } %>
+            </h3>
+            <h3 id="bio-label">LinkedIn: 
+              <% if (profile.linkedIn) { %>
+              <a href="<%= profile.linkedIn %>">View</a>
+              <% } %>
+            </h3>
         </div>
     </section>
 
@@ -54,8 +73,52 @@
     </section>
 
     <section class="profile-followers">
-        <h2>Connections</h2>
-        <div class="profile-friends"></div>
+      <h3 id="bio-label">Following</h3>
+      <p>
+        <% if (profile.following) { %>
+          <%= profile.following.length %>
+        <% } else { %>
+            0
+        <% } %>
+      </p>
+      <h3 id="bio-label">Followers</h3>
+      <p>
+        <% if (profile.followers) { %>
+          <%= profile.followers.length %>
+        <% } else { %>
+            0
+        <% } %>
+      </p>
+        <div class="profile-skills">
+          <h3 id="bio-label">Skills</h3>
+          <div class="member-form">
+              <div>
+                <% if (profile.skills.length) { %>
+                    <ul>
+                      <% profile.skills.forEach(function(s) { %>
+                      <li>
+                        <div class="skill-section">
+                          <div>
+                            <%= s.skill %>
+                          </div>
+                          <div>
+                            <i class="fa-solid fa-xmark"></i>  
+                          </div>
+                        </div>
+                      </li>
+                      <% }) %>
+                    </ul>
+                    <% } %>
+              </div>
+              <% if (profile.user.toString() === user._id.toString()) { %>
+                <form id="add-volunteer-form" method="POST"
+                  action="/profiles/<%= profile._id %>/skills">
+                    <input type="string" name="skill" placeholder="Skills">
+                    <input type="submit" value="Add">
+                </form>
+                <% } %>
+          </div>
+        </div>
     </section>
 </main>
 

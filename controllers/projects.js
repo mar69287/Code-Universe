@@ -32,35 +32,19 @@ function create(req, res) {
     const project = new Project(req.body);
     project.save()
         .then(() => {
-            console.log(req.user.id)
             return Profile.findOne({ user: req.user.id })
         })
         .then(profile => {
-            console.log(profile)
-            console.log(project)
-            console.log(profile.project)
-            console.log("it reaches 2nd to last then")
             profile.projects.push(project._id)
             return profile.save()
         })
         .then(savedProfile => {
-            console.log("it reached final then")
             res.redirect('/projects');
         })
         .catch(error => {
             console.log(error)
         })
 
-    // req.body.author = req.user._id
-    // req.body.userName = req.user.name;
-    // req.body.userAvatar = req.user.avatar;
-    // const project = new Project(req.body);
-    // // console.log(req.user)
-    // project.save(function (err) {
-    //     if (err) return res.redirect('/projects/new');
-    //     console.log(project);
-    //     res.redirect('/projects');
-    // });
 }
 
 function show(req, res) {

@@ -2,8 +2,6 @@
 
 * {
   box-sizing: border-box;
-  /* background-color: #24252A;
-  color: #ecf0f1; */
   background-color: rgb(240, 240, 240);
 }
 
@@ -807,7 +805,7 @@ td>a:hover {
 .profile-details,
 .profile-followers {
   width: 20%;
-  height: 600px;
+  /* height: 600px; */
   padding: 1rem;
 }
 
@@ -849,12 +847,17 @@ td>a:hover {
   border-radius: 10rem;
 }
 
-.profile-details>div:nth-child(2) {
+#profile-content {
   background-color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+}
+
+#profile-content>h3 {
+  text-align: left;
   width: 100%;
 }
 
@@ -881,9 +884,19 @@ margin: auto;
   margin: 0;
   margin-top: .4rem;
   color: #707070;
+  text-align: center;
+}
+
+.profile-details>div:nth-of-type(2) {
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .profile-details>div:last-child {
+  margin-top: 1rem;
   background-color: rgb(255, 255, 255);
   width: 100%;
   display: flex;
@@ -920,6 +933,96 @@ margin: auto;
   font-size: 1rem;
 }
 
+.profile-followers>p {
+  margin: 0;
+  background-color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+}
+
+.profile-skills {
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.skill-section {
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill-section>div:first-child,
+.skill-section>div:last-child {
+  background-color: rgb(255, 255, 255);
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.skill-section>div:last-child {
+  justify-content: flex-end;
+}
+
+.skill-section>div:last-child>i {
+  font-size: 1.1rem;
+  background-color: rgb(255, 255, 255);
+  color: rgb(196, 196, 196);
+  transition: all 0.2s ease 0s;
+}
+
+.skill-section>div:last-child>i:hover {
+  color: rgb(196, 0, 0);
+}
+
+.profile-skills>.member-form {
+  flex-direction: column;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+}
+
+.profile-skills>.member-form>div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+}
+
+.profile-skills>.member-form>div>ul {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  padding: .3rem 0;
+  margin: 0;
+  /* margin-top: .3rem; */
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.profile-skills>.member-form>div>ul>li {
+  font-size: 1rem;
+  font-weight: 300;
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+  padding: .2rem 0;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+}
+
+.profile-skills>.member-form>form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: .5rem;
+}
+
 .profile-small>p {
   font-size: .8rem;
 }
@@ -927,9 +1030,15 @@ margin: auto;
 /* profile create form */
 
 #create-profile {
-  margin: 0;
-  width: 40%;
-  height: 60vh;
+  display: flex;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 15%;
+  /* bottom: 40%; */
+  margin: auto;
+  width: 50rem;
+  height: 30rem;
   margin-top: 4rem;
   align-items: center;
   justify-content: center;
@@ -963,12 +1072,13 @@ margin: auto;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  width: 40%;
+  width: 33.3%;
   height: 100%;
   background-color: rgb(255, 255, 255);
 }
 
-.profile-inputs>label {
+.profile-inputs>label,
+.profile-links>label {
   font-size: 1rem;
   margin-bottom: .3rem;
   background-color: rgb(255, 255, 255);
@@ -983,11 +1093,30 @@ margin: auto;
   width: 100%;
 }
 
+.profile-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0 1rem;
+  width: 33.3%;
+  background-color: rgb(255, 255, 255);
+}
+
+.profile-links>input {
+  margin-bottom: .8rem;
+  padding: 5px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+}
+
 .profile-textarea {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60%;
+  width: 33.3%;
   height: 100%;
   background-color: rgb(255, 255, 255);
 }
@@ -999,8 +1128,8 @@ margin: auto;
   border-radius: 5px;
   font-size: 16px;
   background-color: rgb(255, 255, 255);
-  height: 60%;
-  width: 80%;
+  height: 80%;
+  width: 100%;
 }
 
 /* 

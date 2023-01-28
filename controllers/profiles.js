@@ -10,14 +10,6 @@ module.exports = {
     // update
 }
 
-// function index(req, res) {
-//     Profile.find({})
-//         .exec(function (err, profiles) {
-//             console.log(profiles)
-//             res.render("profiles/index", { profiles })
-//         })
-// }
-
 function index(req, res) {
 
     Profile.find({})
@@ -25,44 +17,7 @@ function index(req, res) {
             console.log(profiles)
             res.render("profiles/index", { profiles })
         })
-
-    // Profile.findOne({ user: req.user._id }, function (err, profile) {
-    //     if (err) {
-    //         console.log(err);
-    //     } else {
-    //         if (profile) {
-    //             res.redirect(`profiles/${profile.id}`);
-    //         } else {
-    //             Profile.find({})
-    //                 .exec(function (err, profiles) {
-    //                     console.log(profiles)
-    //                     res.render("profiles/index", { profiles })
-    //                 })
-    //         }
-
-    //     }
-
-    // }
 }
-// });
-
-// };
-
-
-
-// });
-
-
-// Profile.findOne({
-//     user: req.user._id
-// }, function (err, profile) {
-//     if (profile) {
-//         res.render('profiles/show', { profile })
-//     } else {
-//         res.render('profiles/new')
-//     }
-// });
-// }
 
 function newProfile(req, res) {
     res.render('profiles/new');
@@ -97,27 +52,6 @@ function show(req, res) {
         })
 
 }
-
-    // this code works last
-    // Project.find({ author: req.user._id }, function (err, projects) {
-    //     if (err) {
-    //         console.log(err);
-    //     } else {
-    //         Profile.findOne({ _id: req.params.id }, function (err, profile) {
-    //             if (err) {
-    //                 console.log(err);
-    //             } else {
-    //                 if (profile) {
-    //                     res.render('profiles/show', { projects, profile });
-    //                 } else {
-    //                     res.redirect('new')
-    //                 }
-
-    //             }
-    //         });
-    //     }
-    // });
-
 
 
 // function edit(req, res, next) {
