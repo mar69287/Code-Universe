@@ -16,7 +16,7 @@ const skillSchema = new Schema({
 
 
 const profileSchema = new Schema({
-
+    name: String,
     email: String,
     age: Number,
     location: String,

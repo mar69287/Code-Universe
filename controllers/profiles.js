@@ -5,9 +5,10 @@ module.exports = {
     index,
     create,
     show,
-    new: newProfile
-    // edit,
-    // update
+    new: newProfile,
+    edit,
+    update,
+    delete: deleteProfile
 }
 
 function index(req, res) {
@@ -54,21 +55,31 @@ function show(req, res) {
 }
 
 
-// function edit(req, res, next) {
-//     Project.findById(req.params.id, function (err, project) {
-//         if (err) { return next(err); }
+function edit(req, res, next) {
+    Profile.findById(req.params.id, function (err, profile) {
+        if (err) { return next(err); }
 
-//         res.render('projects/edit', { project })
-//     });
-// }
+        res.render('profiles/edit', { profile })
+    });
+}
 
-// function update(req, res, next) {
-//     const updatedProject = {
-//         content: req.body.content,
-//         members: req.body.members
-//     };
-//     Project.findByIdAndUpdate(req.params.id, updatedProject, { new: true }, function (err, project) {
-//         if (err) { return next(err); }
-//         res.redirect(`/projects/${project._id}`);
-//     });
-// }
+function update(req, res, next) {
+    const updatedProject = {
+        content: req.body.content,
+        members: req.body.members
+    };
+    Profile.findByIdAndUpdate(req.params.id, updatedProject, { new: true }, function (err, profile) {
+        if (err) { return next(err); }
+        res.redirect(`/profiles/${profile._id}`);
+    });
+}
+
+function deleteProfile(req, res, next) {
+    Profile.findByIdAndDelete(req.params.id, function (err, profile) {
+        if (err) { return next(err); }
+        Project.deleteMany({ author: req.user.id }, function (err, projects) {
+            if (err) { return next(err); }
+            res.redirect('/profiles');
+        })
+    });
+}

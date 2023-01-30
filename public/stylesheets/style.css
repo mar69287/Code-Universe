@@ -779,6 +779,54 @@ td>a:hover {
 
 /* profile */
 
+#delete-profile {
+  font-family: ' Raleway', sans-serif;
+  border-radius: 5px;
+  padding: .3rem .4rem;
+  position: absolute;
+  left: 0;
+  top: 80px;
+  transition: all 0.3s ease;
+}
+
+#delete-profile:hover {
+  background-color: #f44336;
+  cursor: pointer;
+  color: #ecf0f1;
+}
+
+#delete-profile:hover i {
+  background-color: #ff4b3e;
+  cursor: pointer;
+  color: #ecf0f1;
+}
+
+.edit-profile {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#edit-profile>i {
+  background-color: rgb(255, 255, 255);
+  font-size: 1rem;
+  color: #0088a9;
+  transition: all 0.3s ease;
+}
+
+#edit-profile>i:hover {
+  font-size: 1.1rem;
+}
+
+#delete-profile>i {
+  background-color: rgb(255, 255, 255);
+  font-size: 1rem;
+  margin-right: .2rem;
+  transition: all 0.3s ease;
+}
+
 .profile-show {
   display: flex;
   flex-direction: row;
@@ -787,6 +835,18 @@ td>a:hover {
   margin-top: 80px;
   width: 100%;
   /* border: solid 5px aqua; */
+}
+
+#bio-label>a {
+  text-decoration: none;
+  color: #0088a9;
+  background-color: rgb(255, 255, 255);
+  font-size: .9rem;
+  transition: all 0.3s ease;
+}
+
+#bio-label>a:hover {
+  font-size: 1rem;
 }
 
 .profile-details,
@@ -814,10 +874,9 @@ td>a:hover {
   background-color: rgb(255, 255, 255);
 }
 
-/* .profile-followers {
-  margin: 0;
-  background-color: #3d5a80;
-} */
+.profile-details>div:nth-child(3) {
+  background-color: rgb(255, 255, 255);
+}
 
 .profile-main {
   width: 35%;
@@ -969,15 +1028,21 @@ margin: auto;
   justify-content: flex-end;
 }
 
-.skill-section>div:last-child>i {
+.delete-skill>button>i {
   font-size: 1.1rem;
   background-color: rgb(255, 255, 255);
   color: rgb(196, 196, 196);
   transition: all 0.2s ease 0s;
 }
 
-.skill-section>div:last-child>i:hover {
+.delete-skill>button {
+  border: none;
+  background-color: rgb(255, 255, 255);
+}
+
+.delete-skill>button>i:hover {
   color: rgb(196, 0, 0);
+  cursor: pointer;
 }
 
 .profile-skills>.member-form {

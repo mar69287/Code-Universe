@@ -1,8 +1,17 @@
 <%- include('../partials/head') %>
 
 <main class="profile-show">
+      <% if (user?._id.equals(profile.user)) { %>
+      <form action="/profiles/<%= profile._id %>?_method=DELETE" class="delete-form" method="POST">
+        <button id="delete-profile" type="submit"><i class="fa-solid fa-trash"></i>Delete Profile</button>
+      </form>
+      <% } %>
     <section class="profile-details">
-
+      <div class="edit-profile">
+        <% if (user?._id.equals(profile.user)) { %>
+          <a  id="edit-profile" href="/profiles/<%= profile._id %>/edit"><i class="fa-regular fa-pen-to-square"></i></a>
+          <% } %>
+      </div>
         <div class="profile-image">
           <img src="<%= profile.avatar %>"" alt="">
         </div>
@@ -102,7 +111,11 @@
                             <%= s.skill %>
                           </div>
                           <div>
-                            <i class="fa-solid fa-xmark"></i>  
+                            <% if (user?._id.equals(profile.user)) { %>
+                              <form class="delete-skill" action="/skills/<%= s._id %>?_method=DELETE" class="delete-form" method="POST">
+                                <button type="submit"><i class="fa-solid fa-xmark"></i> </button>
+                              </form>
+                              <% } %> 
                           </div>
                         </div>
                       </li>
@@ -110,7 +123,7 @@
                     </ul>
                     <% } %>
               </div>
-              <% if (profile.user.toString() === user._id.toString()) { %>
+              <% if (user?._id.equals(profile.user)) { %>
                 <form id="add-volunteer-form" method="POST"
                   action="/profiles/<%= profile._id %>/skills">
                     <input type="string" name="skill" placeholder="Skills">

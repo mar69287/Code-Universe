@@ -1,0 +1,38 @@
+<%- include('../partials/head') %>
+
+  
+<main class="new-main">
+  <div id="create-profile" class="new">
+      <h2>Edit Profile</h2>
+      <form action="/profiles/<%= profile.id %>?_method=PUT" method="POST">
+
+          <div>
+            <div class="profile-inputs">
+              <label>Name</label>
+              <input type="String" name="name" value="<%=profile.name%>">
+              <label>Email</label>
+              <input type="String" name="email" value="<%=profile.email%>">
+              <label>Age</label>
+              <input type="Number" name="age" value="<%=profile.age%>">
+              <label>Location</label>
+              <input type="String" name="location" value="<%=profile.location%>">
+            </div>
+            <div class="profile-links">
+              <label>Portfolio Link</label>
+                <input type="String" name="portfolio" value="<%=profile.portfolio%>">
+                <label>LinkedIn</label>
+                <input type="String" name="linkedIn" value="<%=profile.linkedIn%>">
+                <label>Github</label>
+                <input type="Number" name="github" value="<%=profile.github%>">
+            </div>
+            <div class="profile-textarea">
+              <textarea name="bio" cols="2" rows="2" ><%=profile.bio%></textarea>
+            </div>
+          </div>
+
+          <button type="submit">Continue</button>
+      </form>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>

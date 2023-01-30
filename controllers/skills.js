@@ -19,9 +19,9 @@ async function deleteSkill(req, res, next) {
 
     try {
         const profile = await Profile.findOne({ "skills._id": req.params.id })
-        if (!project) return res.redirect("/projects")
-        project.volunteers.remove(req.params.id)
-        await project.save()
+        if (!profile) return res.redirect("/profiles/")
+        profile.skills.remove(req.params.id)
+        await profile.save()
         res.redirect(`/profiles/${profile._id}`)
     } catch (err) {
         return next(err)
