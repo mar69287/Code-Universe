@@ -4,25 +4,22 @@
 
     <section class="posts-container">
   
-        <% profiles.forEach((p) => { %>
+        <% profile.followings.forEach((f) => { %>
         <div id="profile-index" class="project-container">
 
           <div id="profile-center">
             <div id="profile-show-name">
-              <img class="author-pic" alt="avatar" src="<%= p.avatar %>"" referrerpolicy="no-referrer" >
-              <h2 class="post-author"><%= p.name %></h2>
+              <img class="author-pic" alt="avatar" src="<%= f.avatar %>"" referrerpolicy="no-referrer" >
+              <h2 class="post-author"><%= f.name %></h2>
             </div>
             <div class="profile-visit">
-              <form id="add-volunteer-form" method="POST"
-                action="/profiles/<%= p._id %>/followers">
-                <input style="margin-right: .5rem;" type="submit" value="Follow">
-            </form>
               <a href="/profiles/<%= p._id %>">Profile</a>
             </div>
           </div>    
               
         </div>
         <% }) %>
+        
       </section>
 
 </main>

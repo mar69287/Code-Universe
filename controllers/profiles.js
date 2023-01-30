@@ -64,11 +64,17 @@ function edit(req, res, next) {
 }
 
 function update(req, res, next) {
-    const updatedProject = {
-        content: req.body.content,
-        members: req.body.members
+    const updatedProfile = {
+        name: req.body.name,
+        email: req.body.email,
+        age: req.body.age,
+        location: req.body.location,
+        portfolio: req.body.portfolio,
+        linkedIn: req.body.linkedIn,
+        github: req.body.github,
+        bio: req.body.bio
     };
-    Profile.findByIdAndUpdate(req.params.id, updatedProject, { new: true }, function (err, profile) {
+    Profile.findByIdAndUpdate(req.params.id, updatedProfile, { new: true }, function (err, profile) {
         if (err) { return next(err); }
         res.redirect(`/profiles/${profile._id}`);
     });

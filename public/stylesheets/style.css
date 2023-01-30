@@ -1257,7 +1257,7 @@ margin: auto;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 90%;
+  width: 70%;
   background-color: rgb(255, 255, 255);
   margin-top: 0;
 }
@@ -1266,8 +1266,13 @@ margin: auto;
   margin-right: .8rem;
 }
 
+#profile-index {
+  padding-left: 1.4rem;
+  padding-right: 1.4rem;
+}
+
 .profile-visit {
-  width: 10%;
+  width: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
