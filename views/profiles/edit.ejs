@@ -2,6 +2,11 @@
 
   
 <main class="new-main">
+  <% if (user?._id.equals(profile.user)) { %>
+    <form action="/profiles/<%= profile._id %>?_method=DELETE" class="delete-form" method="POST">
+      <button id="delete-profile" type="submit"><i class="fa-solid fa-trash"></i>Delete Profile</button>
+    </form>
+    <% } %>
   <div id="create-profile" class="new">
       <h2>Edit Profile</h2>
       <form action="/profiles/<%= profile.id %>?_method=PUT" method="POST">
