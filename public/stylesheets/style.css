@@ -790,6 +790,7 @@ td>a:hover {
   background-color: rgb(255, 255, 255);
   color: black;
   border: 2px black solid;
+  font-size: .8rem;
 }
 
 
@@ -827,7 +828,7 @@ td>a:hover {
 
 #delete-profile>i {
   background-color: rgb(255, 255, 255);
-  font-size: 1rem;
+  font-size: .8rem;
   margin-right: .2rem;
   transition: all 0.3s ease;
 }
