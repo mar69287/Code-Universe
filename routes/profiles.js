@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const profilesCtrl = require("../controllers/profiles")
 const ensureLoggedIn = require('../config/ensureLoggedIn');
+// const Profile = require('../models/profile')
 
 router.get('/', profilesCtrl.index);
 router.get("/new", ensureLoggedIn, profilesCtrl.new);

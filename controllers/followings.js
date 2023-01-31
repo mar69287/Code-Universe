@@ -19,21 +19,11 @@ function index(req, res) {
 }
 
 
-function update(req, res, next) {
-    const updatedProfile = {
-        following: req.user.id
-    };
-    Profile.findByIdAndUpdate(req.params.id, updatedProfile, { new: true }, function (err, profile) {
-        if (err) { return next(err); }
-        res.redirect(`/profiles/${profile._id}`);
-    });
-}
-
 // const updatedProfile = {
 //     following: req.user.id
 // };
 // Profile.updateOne({user: req.body.id}, { $set: updatedProfile })
-//     res.redirect(`/profiles/${profile._id}`);
+    // res.redirect(`/profiles/${profile._id}`);
 
 
 // Profile.findOneAndUpdate({ user: req.user.id }, { following: req.user.id }, { new: true }, (err, profile) => {

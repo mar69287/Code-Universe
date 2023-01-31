@@ -13,11 +13,50 @@ module.exports = {
 
 function index(req, res) {
 
-    Profile.find({})
-        .exec(function (err, profiles) {
-            console.log(profiles)
-            res.render("profiles/index", { profiles })
-        })
+    if (req.isAuthenticated()) {
+        Profile.find({})
+            .then(profiles => {
+                // console.log(profiles)
+                return Profile.findOne({ user: req.user._id })
+                    .then(currentProfile => {
+                        console.log(currentProfile)
+                        res.render("profiles/index", { profiles, currentProfile });
+                    });
+            })
+            .catch(error => {
+                res.send(error);
+            });
+    } else {
+        Profile.find({})
+            .exec(function (err, profiles) {
+                // console.log(profiles)
+                res.render("profiles/index", { profiles })
+            })
+    }
+
+    // try {
+    //     const currentProfile = await Profile.findOne({ user: req.user._id });
+    //     const profiles = await Profile.find({});
+
+    //     res.render("profiles/index", { currentProfile, profiles });
+    // } catch (error) {
+    //     res.send(error);
+    // }
+
+    // Profile.findOne({ user: req.user._id }, function (err, profile) {
+    //     Profile.find({})
+    //         .exec(function (err, profiles) {
+    //             console.log(profiles)
+    //             res.render("profiles/index", { profiles, profile })
+    //         })
+    // })
+
+
+    // Profile.find({})
+    //     .exec(function (err, profiles) {
+    //         console.log(profiles)
+    //         res.render("profiles/index", { profiles })
+    //     })
 }
 
 function newProfile(req, res) {
