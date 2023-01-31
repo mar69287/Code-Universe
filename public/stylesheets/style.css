@@ -784,10 +784,15 @@ td>a:hover {
   border-radius: 5px;
   padding: .3rem .4rem;
   position: absolute;
-  left: 0;
-  top: 80px;
+  right: 1rem;
+  bottom: 1rem;
   transition: all 0.3s ease;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  border: 2px black solid;
 }
+
+
 
 #delete-profile:hover {
   background-color: #f44336;
