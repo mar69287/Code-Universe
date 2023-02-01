@@ -21,6 +21,7 @@ const competitionsRouter = require('./routes/competitions')
 const newsRouter = require('./routes/news')
 const userRouter = require('./routes/user')
 const followingsRouter = require('./routes/followings')
+const followersRouter = require('./routes/followers')
 
 var app = express();
 
@@ -57,6 +58,7 @@ app.use('/competitions', competitionsRouter);
 app.use('/news', newsRouter);
 app.use('/users', userRouter);
 app.use('/followings', followingsRouter);
+app.use('/followers', followersRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

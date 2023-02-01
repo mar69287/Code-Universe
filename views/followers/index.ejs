@@ -1,0 +1,28 @@
+<%- include('../partials/head') %>
+
+<main class="profile-index">
+
+    <section class="posts-container">
+      <% if (profile.followers) { %>
+
+          <% profile.followers.forEach((f) => { %>
+          <div id="profile-index" class="project-container">
+
+            <div id="profile-center">
+              <div id="profile-show-name">
+                <img class="author-pic" alt="avatar" src="<%= f.avatar %>"" referrerpolicy="no-referrer" >
+                <h2 class="post-author"><%= f.name %></h2>
+              </div>
+              <div class="profile-visit">
+                <a id="view-profile" href="/profiles/<%= f._id %>">Profile</a>
+              </div>
+            </div>    
+                
+          </div>
+          <% }) %>
+      <% } %>
+      </section>
+
+</main>
+
+<%- include('../partials/footer') %>

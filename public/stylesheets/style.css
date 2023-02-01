@@ -1382,3 +1382,22 @@ margin: auto;
   border: .1rem rgb(61, 60, 60) solid;
   background-color: rgb(58, 101, 148);
 }
+
+.foll-num {
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+  background-color: rgb(255, 255, 255);
+  font-size: .9rem;
+  font-size: 1.1rem;
+  transition: all 0.2s ease 0s;
+  padding: .1rem;
+}
+
+.foll-num:hover {
+  color: #0088a9;
+}
+
+.profile-followers>p {
+  background-color: rgb(255, 255, 255);
+}
