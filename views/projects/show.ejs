@@ -6,29 +6,49 @@
   <% } %>
   <section class="show">
     
-    
-    <div class="project-card">
-      <div class="specific-header">
-        <img class="show-pic" alt="avatar" src="<%= project.userAvatar %>"" referrerpolicy="no-referrer" >
-        <div class="post-info">
-          <h2 class="post-author"><%= project.userName %></h2>
+    <div class="project-header-show">
+
+
+      <div class="project-card">
+        <div class="specific-header">
+          <img class="show-pic" alt="avatar" src="<%= project.userAvatar %>"" referrerpolicy="no-referrer" >
+          <div class="post-info">
+            <h2 class="post-author"><%= project.userName %></h2>
+          </div>
         </div>
-      </div>
-      <div class="project-members">
-        <h4>Members Wanted: </h4>
-        <p><%= project.members %></p>
-      </div>
-      <div class="project-content">
-        <p><%= project.content %></p>
-      </div>
-      <div class="project-footer">
-        <div class="specific-details">
-          <p class="specific-date">Posted on: <%= date%></p>
+        <div class="project-members">
+          <h4>Members Wanted: </h4>
+          <p><%= project.members %></p>
         </div>
+        <div class="project-content">
+          <p><%= project.content %></p>
+        </div>
+        <div class="project-footer">
+          <div class="specific-details">
+            <p class="specific-date">Posted on: <%= date%></p>
+          </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="member-form">
+          <% if (user) { %>
+          <h3 class="member-headers">Become a Team Member</h3>
+          <form id="add-volunteer-form" method="POST"
+            action="/projects/<%= project._id %>/volunteers">
+              <textarea name="content" id="" cols="15" rows="4" placeholder="Introduce yourself to the team!"></textarea>
+              <input id="add-following" type="submit" value="Join">
           </form>
+          <% } else { %>
+          <h3 class="member-headers">Sign in to join a project</h3>
+          <% } %>
         </div>
+
       </div>
-    </div>
+
+
+
+    
 
 
     
@@ -42,6 +62,7 @@
                 <tr>
                   <th>#</th>
                   <th>Name</th>
+                  <th>Comment</th>
                   <th>Profile</th>
                   <th></th>
                 </tr>
@@ -51,6 +72,7 @@
                   <tr>
                     <td><%= idx+1 %></td>
                     <td><%= v.userName %></td>
+                    <td><%= v.content %></td>
                     <td><a href="/profiles/<%= v.profile %>">Visit</a></td>
                     <td>
                       <% if (user?._id.equals(v.user)) { %>
@@ -67,18 +89,7 @@
             <h3 class="member-headers">No Volunteers Yet</h3>
           <% } %>
       </div>
-    
-        <div class="member-form">
-          <% if (user) { %>
-          <h3 class="member-headers">Become a Team Member</h3>
-          <form id="add-volunteer-form" method="POST"
-            action="/projects/<%= project._id %>/volunteers">
-              <input type="submit" value="Join">
-          </form>
-          <% } else { %>
-          <h3 class="member-headers">Sign in to join a project</h3>
-          <% } %>
-        </div>
+  
 
     </div>
   </section>

@@ -22,7 +22,8 @@ async function create(req, res) {
         const volunteer = {
             user: req.user._id,
             userName: profile.name,
-            profile: profile._id
+            profile: profile._id,
+            content: req.body.content
         }
         project.volunteers.push(volunteer)
         await project.save()

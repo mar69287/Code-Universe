@@ -9,8 +9,8 @@ const volunteerSchema = new Schema({
         required: true
     },
     userName: String,
-    profile: String
-
+    profile: String,
+    content: String
 }, {
     timestamps: true
 });
