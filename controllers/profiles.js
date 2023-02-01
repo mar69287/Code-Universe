@@ -34,29 +34,6 @@ function index(req, res) {
             })
     }
 
-    // try {
-    //     const currentProfile = await Profile.findOne({ user: req.user._id });
-    //     const profiles = await Profile.find({});
-
-    //     res.render("profiles/index", { currentProfile, profiles });
-    // } catch (error) {
-    //     res.send(error);
-    // }
-
-    // Profile.findOne({ user: req.user._id }, function (err, profile) {
-    //     Profile.find({})
-    //         .exec(function (err, profiles) {
-    //             console.log(profiles)
-    //             res.render("profiles/index", { profiles, profile })
-    //         })
-    // })
-
-
-    // Profile.find({})
-    //     .exec(function (err, profiles) {
-    //         console.log(profiles)
-    //         res.render("profiles/index", { profiles })
-    //     })
 }
 
 function newProfile(req, res) {
@@ -119,12 +96,21 @@ function update(req, res, next) {
     });
 }
 
-function deleteProfile(req, res, next) {
-    Profile.findByIdAndDelete(req.params.id, function (err, profile) {
-        if (err) { return next(err); }
-        Project.deleteMany({ author: req.user.id }, function (err, projects) {
-            if (err) { return next(err); }
-            res.redirect('/profiles');
-        })
-    });
+async function deleteProfile(req, res, next) {
+    // Profile.findByIdAndDelete(req.params.id, function (err, profile) {
+    //     if (err) { return next(err); }
+    //     Project.deleteMany({ author: req.user.id }, function (err, projects) {
+    //         if (err) { return next(err); }
+    //         res.redirect('/profiles');
+    //     })
+    // });
+    await Profile.updateMany(
+        { following: req.params.id },
+        { $pull: { following: req.params.id } }
+    );
+
+    await Profile.findByIdAndDelete(req.params.id);
+    await Project.deleteMany({ author: req.user.id });
+    res.redirect('/profiles');
 }
+
