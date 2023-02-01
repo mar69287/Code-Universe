@@ -28,7 +28,11 @@
                                       <% if (result)  { %>
                                         
                                       <% } else { %>
-                                      <a  style="margin-right: .2rem; background-color: rgb(255, 230, 0); color: black;" href="/followings/<%= p._id %>">Follow</a>
+                                        <% if (currentProfile._id.toString() ===  p._id.toString())  { %>
+                                        
+                                        <% } else { %>
+                                        <a  style="margin-right: .2rem; background-color: rgb(255, 230, 0); color: black;" href="/followings/<%= p._id %>">Follow</a>
+                                        <% } %>
                                       <% } %>
                     <% } %>
                         

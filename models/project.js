@@ -3,15 +3,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const volunteerSchema = new Schema({
-    github: {
-        type: String,
-    },
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User',
         required: true
     },
-    userName: String
+    userName: String,
+    profile: String
+
 }, {
     timestamps: true
 });

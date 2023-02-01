@@ -1,20 +1,37 @@
 const Project = require('../models/project')
+const Profile = require('../models/profile')
 
 module.exports = {
     create,
     delete: deleteVolunteer
 }
 
-function create(req, res) {
-    Project.findById(req.params.id, function (err, project) {
-        req.body.user = req.user._id;
-        req.body.userName = req.user.name;
-        req.body.userAvatar = req.user.avatar;
-        project.volunteers.push(req.body)
-        project.save(function (err) {
-            res.redirect(`/projects/${project._id}`)
-        })
-    })
+async function create(req, res) {
+
+    try {
+        const profile = await Profile.findOne({ user: req.user._id })
+        if (!profile) {
+            return res.redirect("/profiles/new")
+        }
+        const project = await Project.findById(req.params.id);
+        if (!project) {
+            return res.status(400).json({ msg: "Project not found" });
+        }
+
+
+        const volunteer = {
+            user: req.user._id,
+            userName: profile.name,
+            profile: profile._id
+        }
+        project.volunteers.push(volunteer)
+        await project.save()
+        res.redirect(`/projects/${project._id}`)
+    } catch (error) {
+        console.log(error.message)
+
+    }
+
 }
 
 async function deleteVolunteer(req, res, next) {

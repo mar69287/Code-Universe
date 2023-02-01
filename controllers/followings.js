@@ -2,7 +2,7 @@ const Profile = require('../models/profile')
 
 module.exports = {
     index,
-    update
+    // update
 }
 
 function index(req, res) {
@@ -23,7 +23,7 @@ function index(req, res) {
 //     following: req.user.id
 // };
 // Profile.updateOne({user: req.body.id}, { $set: updatedProfile })
-    // res.redirect(`/profiles/${profile._id}`);
+//     res.redirect(`/profiles/${profile._id}`);
 
 
 // Profile.findOneAndUpdate({ user: req.user.id }, { following: req.user.id }, { new: true }, (err, profile) => {

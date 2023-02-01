@@ -42,7 +42,7 @@
                 <tr>
                   <th>#</th>
                   <th>Name</th>
-                  <th>Github</th>
+                  <th>Profile</th>
                   <th></th>
                 </tr>
               </thead>
@@ -51,7 +51,7 @@
                   <tr>
                     <td><%= idx+1 %></td>
                     <td><%= v.userName %></td>
-                    <td><a href="<%= v.github %>">Visit</a></td>
+                    <td><a href="/profiles/<%= v.profile %>">Visit</a></td>
                     <td>
                       <% if (user?._id.equals(v.user)) { %>
                       <form action="/volunteers/<%= v._id %>?_method=DELETE" class="delete-form" method="POST">
@@ -73,7 +73,6 @@
           <h3 class="member-headers">Become a Team Member</h3>
           <form id="add-volunteer-form" method="POST"
             action="/projects/<%= project._id %>/volunteers">
-              <input type="string" name="github" placeholder="Github Link">
               <input type="submit" value="Join">
           </form>
           <% } else { %>
