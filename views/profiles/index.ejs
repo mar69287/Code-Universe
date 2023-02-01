@@ -26,12 +26,14 @@
                             <% }) %>
                       
                                       <% if (result)  { %>
-                                        
+                                        <form action="/followings/<%= p.id %>?_method=DELETE" class="delete-following-form" method="POST">
+                                        <button class="delete-following-button" type="submit">Unfollow</button>
+                                        </form>
                                       <% } else { %>
                                         <% if (currentProfile._id.toString() ===  p._id.toString())  { %>
-                                        
+                                          
                                         <% } else { %>
-                                        <a  style="margin-right: .2rem; background-color: rgb(255, 230, 0); color: black;" href="/followings/<%= p._id %>">Follow</a>
+                                        <a id="add-following" href="/followings/<%= p._id %>">Follow</a>
                                         <% } %>
                                       <% } %>
                     <% } %>
@@ -39,7 +41,7 @@
                   
                     <% }  %>
             <% }  %>
-            <a href="/profiles/<%= p._id %>">Profile</a>
+            <a id="view-profile" href="/profiles/<%= p._id %>">Profile</a>
             </div>
           </div>    
               
@@ -48,5 +50,5 @@
       </section>
 
 </main>
-
+<!-- class="view-profile" -->
 <%- include('../partials/footer') %>

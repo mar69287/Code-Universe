@@ -3,23 +3,24 @@
 <main class="profile-index">
 
     <section class="posts-container">
-  
-        <% profile.followings.forEach((f) => { %>
-        <div id="profile-index" class="project-container">
+      <% if (profile.following) { %>
 
-          <div id="profile-center">
-            <div id="profile-show-name">
-              <img class="author-pic" alt="avatar" src="<%= f.avatar %>"" referrerpolicy="no-referrer" >
-              <h2 class="post-author"><%= f.name %></h2>
-            </div>
-            <div class="profile-visit">
-              <a href="/profiles/<%= p._id %>">Profile</a>
-            </div>
-          </div>    
-              
-        </div>
-        <% }) %>
-        
+          <% profile.following.forEach((f) => { %>
+          <div id="profile-index" class="project-container">
+
+            <div id="profile-center">
+              <div id="profile-show-name">
+                <img class="author-pic" alt="avatar" src="<%= f.avatar %>"" referrerpolicy="no-referrer" >
+                <h2 class="post-author"><%= f.name %></h2>
+              </div>
+              <div class="profile-visit">
+                <a id="view-profile" href="/profiles/<%= f._id %>">Profile</a>
+              </div>
+            </div>    
+                
+          </div>
+          <% }) %>
+      <% } %>
       </section>
 
 </main>

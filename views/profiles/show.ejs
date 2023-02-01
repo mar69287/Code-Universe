@@ -81,7 +81,7 @@
       <h3 id="bio-label">Following</h3>
       <p>
         <% if (profile.following) { %>
-          <%= profile.following.length %>
+          <a href="/followings/<%= profile.id %>/list"><%= profile.following.length %></a>
         <% } else { %>
             0
         <% } %>
@@ -89,7 +89,7 @@
       <h3 id="bio-label">Followers</h3>
       <p>
         <% if (profile.followers) { %>
-          <%= profile.followers.length %>
+          <a href="/followers"><%= profile.followers.length %></a>
         <% } else { %>
             0
         <% } %>

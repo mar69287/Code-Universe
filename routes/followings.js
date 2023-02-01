@@ -1,10 +1,10 @@
 const express = require('express')
 const router = express.Router()
-// const followingsCtrl = require('../controllers/followings')
+const followingsCtrl = require('../controllers/followings')
 const ensureLoggedIn = require('../config/ensureLoggedIn');
 const Profile = require('../models/profile')
 
-// router.get('/', followingsCtrl.index);
+router.get('/:id/list', followingsCtrl.index);
 
 router.get('/:id', ensureLoggedIn, function (req, res) {
     if (req.isAuthenticated()) {
@@ -26,5 +26,7 @@ router.get('/:id', ensureLoggedIn, function (req, res) {
         res.redirect(`/profiles/new`);
     }
 });
+
+router.delete('/:id', ensureLoggedIn, followingsCtrl.delete)
 
 module.exports = router
