@@ -45,7 +45,6 @@ nav {
 
 nav>div {
   height: 70px;
-  width: 30%;
   display: flex;
   align-items: center;
   background-color: #24252A;
@@ -249,7 +248,7 @@ main {
 }
 
 .posts-container {
-  width: 45%;
+  width: 60%;
   /* border: red 3px solid; */
   display: flex;
   flex-direction: column;
@@ -721,8 +720,8 @@ td>a:hover {
 }
 
 .news-card {
-  height: 35rem;
-  width: 30%;
+  height: 38rem;
+  width: 25rem;
   display: flex;
   background-color: rgb(255, 255, 255);
   flex-direction: column;
@@ -894,6 +893,7 @@ td>a:hover {
   width: 20%;
   /* height: 600px; */
   padding: 1rem;
+  box-sizing: content-box;
 }
 
 .profile-followers>h2 {
@@ -1448,4 +1448,757 @@ margin: auto;
 .profile-skills>.member-form>#add-volunteer-form>#add-following {
   margin-right: 0;
   font-size: .9rem;
+}
+
+@media screen and (max-width: 1255) {
+
+  .logo,
+  nav>div:last-child {
+    width: 10%;
+  }
+
+  .pages {
+    width: 80%;
+  }
+
+  #profile-details {
+    box-sizing: content-box;
+    width: 30%;
+    height: 80rem;
+  }
+
+}
+
+@media screen and (max-width: 983px) {
+  .home>div:first-child {
+    flex-direction: column;
+  }
+
+  .logo>div {
+    padding-left: 1rem;
+  }
+
+  .auth {
+    padding-right: 1rem;
+  }
+
+  .home {
+    margin-top: 5rem;
+  }
+
+  .posts-container {
+    width: 80%;
+  }
+
+  .profile-show {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-gap: .5rem;
+  }
+
+  .profile-details {
+    grid-column: span 2;
+    width: 80%;
+    justify-self: center;
+    align-self: center;
+    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: auto 1fr 2fr 1fr;
+    grid-template-rows: auto auto;
+    grid-gap: 10px;
+    /* height: 15rem; */
+    /* place-self: center; */
+  }
+
+  .edit-profile {
+    display: inline;
+    grid-column: 1 / span 1;
+    width: 5%;
+    background-color: rgb(255, 255, 255);
+    align-self: start;
+  }
+
+  .profile-image {
+    grid-column: 2 / span 1;
+    align-self: end;
+
+  }
+
+  .profile-image>img {
+    height: 6rem;
+    width: 6rem;
+  }
+
+  #author-profile-details {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  #profile-content {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    justify-self: center;
+    align-self: center;
+    place-self: center;
+    /* padding: 0 2rem; */
+  }
+
+  #bio-label {
+    margin: 0;
+  }
+
+  .profile-details>div:last-child {
+    grid-column: 4 / span 1;
+    grid-row: 1 / span 2;
+    place-self: center;
+    width: 80%;
+    margin: 0;
+  }
+
+  .profile-details>div:last-child>h3 {
+    padding: .5rem 0;
+  }
+
+  #edit-profile {
+    background-color: rgb(255, 255, 255);
+    place-self: center;
+  }
+
+  #profile-name {
+    margin-top: 0;
+    font-size: 1rem;
+  }
+
+  #profile-location {
+    font-size: .8rem;
+  }
+
+  .profile-followers {
+    width: 64%;
+    margin: 0;
+  }
+
+  .profile-main {
+    justify-self: end;
+    width: 87.5%;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 780px) {
+
+  .profile-show>#profile-details {
+    width: 100%;
+    height: auto;
+  }
+
+  .profile-show>.profile-followers {
+    width: 88%;
+  }
+
+  .profile-skills>.member-form {
+    margin-top: 0;
+  }
+
+  .profile-show>.profile-main {
+    width: 100%;
+  }
+
+  .logo-name {
+    font-size: .8rem;
+  }
+
+  .fa-memory {
+    font-size: 1.9rem;
+  }
+
+  .pages>a {
+    font-size: 1.1rem;
+    padding: .4rem;
+  }
+
+  .login-link {
+    padding: .5rem 1rem;
+    font-size: 1rem;
+  }
+
+  #home-image {
+    height: 375px;
+    width: 600px;
+  }
+
+  .home>div:last-child {
+    margin: 0;
+  }
+
+  .home>div:first-child>ul {
+    margin: 0;
+  }
+
+  .profile-link {
+    font-size: 1.1rem;
+    padding-right: .2rem;
+    text-align: center;
+    padding-left: 0;
+  }
+
+  #new-project,
+  #edit-project {
+    width: 40%;
+  }
+
+  .project-header-show {
+    flex-direction: column;
+  }
+
+  .project-header-show>.project-card {
+    width: 70%;
+    margin: 0;
+    margin-top: 1rem;
+  }
+
+  .member-form {
+    width: 90%;
+    margin-top: 2rem;
+  }
+
+  #add-volunteer-form {
+    flex-direction: column;
+  }
+
+  .show>.members {
+    width: 90%;
+    margin-top: 2rem;
+  }
+
+  .competitions>table {
+    width: 90%;
+  }
+
+  .competitions>table>tbody>tr>td {
+    font-size: .9rem;
+  }
+
+  .competitions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  #profile-details {
+    box-sizing: content-box;
+    width: 30%;
+    height: 80rem;
+  }
+}
+
+@media screen and (max-width: 670px) {
+
+  .profile-show {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-gap: .5rem;
+  }
+
+  .profile-main {
+    grid-row: 3;
+    grid-column: 1 / span 2;
+  }
+
+  .profile-followers {
+    grid-row: 2;
+    grid-column: 1 / span 2;
+    justify-self: center;
+  }
+
+  .profile-show>.profile-followers {
+    width: 50%;
+  }
+
+  .member-form>#add-volunteer-form>input:last-child {
+    margin-top: .5rem;
+  }
+
+  #profile-bio {
+    font-size: .9rem;
+  }
+
+  #bio-label {
+    font-size: .9rem;
+  }
+
+  .logo-name {
+    font-size: .7rem;
+  }
+
+  .fa-memory {
+    font-size: 1.4rem;
+    padding-top: .1em;
+  }
+
+  .pages>a {
+    font-size: 1rem;
+    padding: .2rem;
+  }
+
+  .login-link {
+    padding: .4rem .8rem;
+    font-size: .9rem;
+  }
+
+  #home-image {
+    height: 300px;
+    width: 500px;
+  }
+
+  .posts-container {
+    width: 95%;
+  }
+
+  .profile-link {
+    font-size: 1rem;
+  }
+
+  .project-container {
+    padding: 1.2rem 2.5rem;
+  }
+
+  .member-form>h3 {
+    font-size: 1.5rem;
+  }
+
+  .member-headers {
+    font-size: 1.5rem;
+  }
+
+  .competitions>table {
+    width: 70%;
+  }
+
+  .competitions>table>tbody>tr>td {
+    font-size: .7rem;
+  }
+
+  .competitions>table>thead>tr>th {
+    font-size: .8rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+
+  .logo-name {
+    font-size: .7rem;
+  }
+
+  .fa-memory {
+    font-size: 1.1rem;
+    padding-top: .1em;
+  }
+
+  .pages>a {
+    font-size: .8rem;
+    padding: .2rem;
+  }
+
+  .login-link {
+    padding: .5rem .6rem;
+    font-size: .8rem;
+    text-align: center;
+  }
+
+  .logo>div {
+    padding-left: .9rem;
+  }
+
+  .auth {
+    padding-right: .9rem;
+  }
+
+  .profile-link {
+    font-size: .8rem;
+  }
+
+
+  #profile-show-name>.author-pic {
+    width: 2.8rem;
+    height: 2.8rem;
+    margin-right: .3rem;
+  }
+
+  /* #add-following {
+    padding: .3rem 1rem;
+  } */
+
+  #profile-index {
+    padding: 1.1rem 1.3rem;
+  }
+
+  .post-author {
+    font-size: 1rem;
+  }
+
+  .profile-visit>#view-profile,
+  .delete-following-button,
+  #add-following {
+    padding: .3rem .5rem;
+    font-size: .75rem;
+    margin-right: 0;
+    margin-left: .3rem;
+  }
+
+  .show-pic {
+    height: 4rem;
+    width: 4rem;
+  }
+
+  .project-header-show>.project-card {
+    width: 90%;
+  }
+
+  #add-volunteer-form>textarea {
+    width: 80%;
+  }
+
+  .member-form>h3 {
+    font-size: 1.2rem;
+  }
+
+  .member-headers {
+    font-size: 1.2rem;
+  }
+
+  .competitions>table {
+    width: 50%;
+  }
+
+  .competitions>table>tbody>tr>td {
+    font-size: .5rem;
+  }
+
+  .competitions>table>thead>tr>th {
+    font-size: .6rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+
+  .profile-show>.profile-followers {
+    width: 60%;
+  }
+
+  .logo-name {
+    font-size: .7rem;
+  }
+
+  .fa-memory {
+    font-size: 1.1rem;
+    padding-top: .1em;
+  }
+
+  .pages>a {
+    font-size: .8rem;
+    padding: .2rem;
+  }
+
+  .login-link {
+    padding: .4rem .8rem;
+    font-size: .8rem;
+  }
+
+  .logo>div {
+    padding-left: .9rem;
+  }
+
+  .auth {
+    padding-right: .9rem;
+  }
+
+  #home-image {
+    height: 250px;
+    width: 375px;
+  }
+
+  .home>div:last-child {
+    margin: 0;
+  }
+
+  .home>div:first-child>ul>li {
+    margin: 1.2rem;
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+  }
+
+  .home>div:first-child>ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 0;
+    margin-top: 1rem;
+  }
+
+  .home>div:last-child>p {
+    font-size: 1rem;
+  }
+
+  /* .profile-link {
+    font-size: .8rem;
+    padding-right: .2rem;
+    text-align: center;
+    padding-left: 0;
+  } */
+
+  #profile-show-name>.author-pic {
+    width: 2.4rem;
+    height: 2.4rem;
+    margin-right: .3rem;
+  }
+
+  .post-author {
+    font-size: .9rem;
+  }
+
+  /* .profile-visit>#view-profile,
+  .delete-following-button,
+  #add-following {
+    padding: .3rem .5rem;
+    font-size: .75rem;
+    margin-right: 0;
+    margin-left: .3rem;
+  } */
+
+  #add-following {
+    padding: .3rem .7rem;
+  }
+
+  #profile-index {
+    padding: 1rem 1.3rem;
+  }
+
+  #add-volunteer-form>textarea {
+    height: 7rem;
+  }
+
+}
+
+@media screen and (max-width: 490px) {
+
+  .logo-name {
+    font-size: .7rem;
+  }
+
+  #profile-bio {
+    font-size: .7rem;
+    letter-spacing: 0;
+  }
+
+  .profile-image>img {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  .foll-num {
+    font-size: .8rem;
+  }
+
+  .profile-skills>#bio-label {
+    font-size: .9rem;
+  }
+
+  .profile-skills>.member-form>div>ul>li {
+    font-size: .7rem;
+    padding: 0;
+  }
+
+  .profile-main>h1 {
+    font-size: 1.3rem;
+  }
+
+  .project-members>h4 {
+    font-size: .9rem;
+  }
+
+  #profile-name {
+    font-size: .7rem;
+  }
+
+  #profile-location {
+    font-size: .6rem;
+  }
+
+  #bio-label {
+    font-size: .7rem;
+  }
+
+  #bio-label>a {
+    font-size: .7rem;
+  }
+
+  .fa-memory {
+    font-size: 1.2rem;
+    padding-top: .1em;
+  }
+
+  .pages>a {
+    font-size: .7rem;
+    padding: .1rem;
+  }
+
+  .login-link {
+    padding: .4rem .8rem;
+    font-size: .8rem;
+  }
+
+  .logo>div {
+    padding: .5rem;
+  }
+
+  .auth {
+    padding-right: .4rem;
+  }
+
+  .home>div:first-child>ul>li {
+    margin: 1.2rem;
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+    font-size: 1.2rem;
+  }
+
+  .home>div:first-child>ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 0;
+    margin-top: 1rem;
+  }
+
+  .home>div:last-child>p {
+    font-size: 1rem;
+  }
+
+  .posts-container {
+    width: 100%;
+  }
+
+  #profile-show-name>.author-pic {
+    width: 2rem;
+    height: 2rem;
+    margin-right: .3rem;
+  }
+
+  .post-author {
+    font-size: .8rem;
+  }
+
+  .profile-visit>#view-profile,
+  .delete-following-button,
+  #add-following {
+    padding: .2rem .4rem;
+    font-size: .7rem;
+    /* margin-right: 0;
+    margin-left: .3rem; */
+  }
+
+  #add-following {
+    padding: .2rem .6rem;
+  }
+
+  #profile-index {
+    padding: 1rem 1.3rem;
+  }
+
+  .profile-link {
+    font-size: .7rem;
+  }
+
+  .news-content>p {
+    font-size: .8rem;
+  }
+
+}
+
+@media screen and (max-width: 441px) {
+
+  .logo-name {
+    font-size: .5rem;
+  }
+
+  .profile-link {
+    font-size: .6rem;
+  }
+
+  .login-link {
+    padding: .4rem .8rem;
+    font-size: .6rem;
+  }
+
+  #new-project,
+  #edit-project {
+    width: 60%;
+  }
+
+  .competitions>table {
+    width: 50%;
+  }
+
+  .competitions>table>tbody>tr>td {
+    font-size: .4rem;
+  }
+
+  .competitions>table>thead>tr>th {
+    font-size: .5rem;
+  }
+}
+
+@media screen and (max-width: 415px) {
+
+  .pages>a {
+    font-size: .6rem;
+    padding: .1rem;
+  }
+
+  /* .login-link {
+    padding: .4rem .8rem;
+    font-size: .6rem;
+  } */
+
+  /* .profile-link {
+    font-size: .6rem;
+    padding-right: .2rem;
+    text-align: center;
+    padding-left: 0;
+  } */
+
+  .auth {
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .home>div:first-child>ul>li {
+    margin: .5rem;
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+    font-size: 1.2rem;
+  }
+
+  .home>div:first-child>ul {
+    margin-top: .7rem;
+    padding-left: 3.5rem;
+  }
+
+  #home-image {
+    height: 220px;
+    width: 330px;
+  }
+
+
 }

@@ -2,7 +2,7 @@
 
 <main class="profile-show">
 
-    <section class="profile-details">
+    <section id="profile-details" class="profile-details">
       <div class="edit-profile">
         <% if (user?._id.equals(profile.user)) { %>
           <a  id="edit-profile" href="/profiles/<%= profile._id %>/edit"><i class="fa-regular fa-pen-to-square"></i></a>
@@ -12,7 +12,7 @@
           <img src="<%= profile.avatar %>"" alt="">
         </div>
 
-        <div>
+        <div id="author-profile-details">
             <h3 id="profile-name"><%= profile.name %></h3>
             <p id="profile-location"><%= profile.location %></p>
         </div>
