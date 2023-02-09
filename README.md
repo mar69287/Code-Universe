@@ -22,7 +22,3 @@ https://code-universe.herokuapp.com/
 <img width="1046" alt="image" src="https://user-images.githubusercontent.com/104735283/217910058-3fe23eb8-3198-4e1b-9671-7f005ede551a.png">
 <img width="1421" alt="image" src="https://user-images.githubusercontent.com/104735283/217910336-f8bbbc51-5973-435c-b313-07f1f04473eb.png">
 
-
-
-## Next Steps
-* Finish layout and design of profile aspect
