@@ -8,7 +8,7 @@ A full CRUD application that aims to foster a collaborative and inclusive commun
 * **Exposure:** Developers can showcase their skills and work to a wider audience, increasing their visibility, and opportunities for career advancement.
 
 ## Try it Out
-Use the link below to try the game out for yourself! <br>
+Use the link below to try it out for yourself! <br>
 https://code-universe.herokuapp.com/
 
 ### Technologies Used
