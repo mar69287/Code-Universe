@@ -30,7 +30,7 @@ p {
 
 nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   height: 78px;
   position: fixed;
@@ -1450,6 +1450,14 @@ margin: auto;
   font-size: .9rem;
 }
 
+.mobile-login{
+  display: none;
+}
+
+.hamburger-icon{
+  display: none;
+}
+
 @media screen and (max-width: 1255) {
 
   .logo,
@@ -1592,6 +1600,58 @@ margin: auto;
 }
 
 @media screen and (max-width: 780px) {
+.mobile-login{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #24252A;
+}
+
+.mobile-login>a {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #ecf0f1;
+  background-color: #24252A;
+}
+
+  .hamburger-icon>i{
+    font-size: 1.3rem;
+  }
+  
+  nav>div:last-child{
+  display: none;
+}
+
+  .hamburger-icon{
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+  }
+  
+  .profile-link{
+    margin-right: .5rem;
+  }
+
+  .pages {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 78px;
+    height: auto;
+    width: 10rem;
+  }
+
+  .pages.active {
+    display: flex;
+  }
+
+  nav>div>a {
+    height: 3rem;
+  }
 
   .profile-show>#profile-details {
     width: 100%;
@@ -1735,14 +1795,14 @@ margin: auto;
     font-size: .9rem;
   }
 
-  .logo-name {
+  /* .logo-name {
     font-size: .7rem;
   }
 
   .fa-memory {
     font-size: 1.4rem;
     padding-top: .1em;
-  }
+  } */
 
   .pages>a {
     font-size: 1rem;
@@ -1794,14 +1854,14 @@ margin: auto;
 
 @media screen and (max-width: 550px) {
 
-  .logo-name {
+  /* .logo-name {
     font-size: .7rem;
   }
 
   .fa-memory {
     font-size: 1.1rem;
     padding-top: .1em;
-  }
+  } */
 
   .pages>a {
     font-size: .8rem;
@@ -1809,8 +1869,8 @@ margin: auto;
   }
 
   .login-link {
-    padding: .5rem .6rem;
-    font-size: .8rem;
+    /* padding: .5rem .6rem;
+    font-size: .8rem; */
     text-align: center;
   }
 
@@ -1821,10 +1881,10 @@ margin: auto;
   .auth {
     padding-right: .9rem;
   }
-
+/* 
   .profile-link {
     font-size: .8rem;
-  }
+  } */
 
 
   #profile-show-name>.author-pic {
@@ -1894,24 +1954,24 @@ margin: auto;
     width: 60%;
   }
 
-  .logo-name {
+  /* .logo-name {
     font-size: .7rem;
-  }
+  } */
 
-  .fa-memory {
+  /* .fa-memory {
     font-size: 1.1rem;
     padding-top: .1em;
-  }
+  } */
 
   .pages>a {
     font-size: .8rem;
     padding: .2rem;
   }
 
-  .login-link {
+  /* .login-link {
     padding: .4rem .8rem;
     font-size: .8rem;
-  }
+  } */
 
   .logo>div {
     padding-left: .9rem;
@@ -2052,10 +2112,10 @@ margin: auto;
     padding: .1rem;
   }
 
-  .login-link {
+  /* .login-link {
     padding: .4rem .8rem;
     font-size: .8rem;
-  }
+  } */
 
   .logo>div {
     padding: .5rem;
@@ -2116,9 +2176,9 @@ margin: auto;
     padding: 1rem 1.3rem;
   }
 
-  .profile-link {
+  /* .profile-link {
     font-size: .7rem;
-  }
+  } */
 
   .news-content>p {
     font-size: .8rem;
@@ -2128,17 +2188,17 @@ margin: auto;
 
 @media screen and (max-width: 441px) {
 
-  .logo-name {
+  /* .logo-name {
     font-size: .5rem;
-  }
+  } */
 
-  .profile-link {
+  /* .profile-link {
     font-size: .6rem;
-  }
+  } */
 
   .login-link {
-    padding: .4rem .8rem;
-    font-size: .6rem;
+    /* padding: .4rem .8rem; */
+    /* font-size: .6rem; */
   }
 
   #new-project,
