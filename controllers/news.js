@@ -4,7 +4,7 @@ module.exports = {
 };
 
 function index(req, res, next) {
-    fetch("https://newsapi.org/v2/everything?q=Programming&from=2023-02-01&sortBy=popularity&apiKey=e57c19337c124e52a59bc9d832327d12")
+    fetch("https://newsapi.org/v2/everything?q=Programming&from=2023-03-29&sortBy=popularity&apiKey=e57c19337c124e52a59bc9d832327d12")
         .then(res => res.json())
         .then(newsInfo =>
             // console.log(info.articles[0].author)
